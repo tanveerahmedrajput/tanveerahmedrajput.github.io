@@ -1,761 +1,1971 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tanveer Ahmed Rajput</title>
-<meta name="description" content="Personal portfolio of Tanveer Ahmed Rajput — Junior Elementary School Teacher, Government of Sindh, and Computer Systems Engineer.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#0e1726;
-  --ink-deep:#080e18;
-  --paper:#f6f0e2;
-  --paper-warm:#efe6d0;
-  --teal:#2f9e8f;
-  --teal-bright:#4fc3b0;
-  --gold:#c9974a;
-  --text-on-ink:#eae3d1;
-  --text-on-ink-dim:#a9b0c0;
-  --text-on-paper:#1b2233;
-  --text-on-paper-dim:#5c5745;
-  --rule-ink:rgba(234,227,209,0.14);
-  --rule-paper:rgba(27,34,51,0.14);
-  --serif:'Fraunces', Georgia, serif;
-  --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  margin:0;
-  font-family:var(--sans);
-  background:var(--paper);
-  color:var(--text-on-paper);
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-img,video{max-width:100%;display:block;}
-a{color:inherit;}
-.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
-h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.08;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Folioblox — Creative Director Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* progress bar */
-.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));z-index:100;width:0%;transition:width 0.1s linear;}
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
 
-/* ---------- NAV ---------- */
-nav{position:sticky;top:0;z-index:50;background:rgba(14,23,38,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule-ink);}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
-.brand{font-family:var(--serif);font-weight:600;font-size:1.05rem;color:var(--text-on-ink);text-decoration:none;}
-.brand em{font-style:normal;color:var(--teal-bright);}
-.navlinks{display:flex;gap:26px;list-style:none;margin:0;padding:0;}
-.navlinks a{color:var(--text-on-ink-dim);text-decoration:none;font-size:0.9rem;transition:color 0.2s ease;position:relative;}
-.navlinks a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--teal-bright);transition:width .25s ease;}
-.navlinks a:hover{color:var(--text-on-ink);}
-.navlinks a:hover::after{width:100%;}
-@media (max-width:760px){ .navlinks{display:none;} }
+    /* Fixed Canvas background animation - Fills 100% of screen on all displays */
+    .canvas-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
 
-/* ---------- HERO ---------- */
-.hero{
-  position:relative;
-  min-height:100svh;
-  display:flex;
-  align-items:center;
-  background:
-    radial-gradient(ellipse 1000px 600px at 85% 10%, rgba(47,158,143,0.20), transparent 60%),
-    linear-gradient(180deg, var(--ink) 0%, var(--ink-deep) 100%);
-  color:var(--text-on-ink);
-  overflow:hidden;
-  padding:120px 0 60px;
-}
-.hero .wrap{
-  display:grid;
-  grid-template-columns:1.1fr 0.9fr;
-  align-items:start; /* top-align both columns so the photo lines up with the eyebrow text */
-  gap:24px;
-  position:relative;
-  z-index:2;
-}
-.hero-text{padding-bottom:24px;}
-.eyebrow-line{
-  display:flex;align-items:center;gap:10px;
-  font-size:0.95rem;color:var(--teal-bright);margin:0 0 22px;
-  opacity:0;transform:translateY(10px);
-  animation:riseIn .7s ease forwards;
-  animation-delay:.15s;
-}
-.eyebrow-line .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-bright);box-shadow:0 0 12px var(--teal-bright);}
-.hero h1{
-  font-size:clamp(3.2rem, 8.2vw, 6.4rem);
-  color:var(--text-on-ink);
-  letter-spacing:-0.01em;
-}
-.hero h1 .line{display:block;overflow:hidden;}
-.hero h1 .line span{
-  display:inline-block;
-  opacity:0;
-  transform:translateY(105%);
-  animation:riseIn .8s cubic-bezier(.2,.8,.2,1) forwards;
-}
-.hero h1 .line.last span{color:var(--text-on-ink-dim);font-weight:500;}
-.hero p.role{
-  font-family:var(--serif);font-size:1.35rem;color:var(--teal-bright);
-  margin:22px 0 0;font-weight:500;
-  opacity:0;transform:translateY(10px);
-  animation:riseIn .7s ease forwards;
-  animation-delay:.75s;
-}
-.hero p.lede{
-  font-size:1.05rem;line-height:1.7;color:var(--text-on-ink-dim);max-width:46ch;
-  margin:20px 0 34px;
-  opacity:0;transform:translateY(10px);
-  animation:riseIn .7s ease forwards;
-  animation-delay:.9s;
-}
-.hero-actions{
-  display:flex;gap:14px;flex-wrap:wrap;
-  opacity:0;transform:translateY(10px);
-  animation:riseIn .7s ease forwards;
-  animation-delay:1.05s;
-}
-@keyframes riseIn{to{opacity:1;transform:translateY(0);}}
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
 
-.btn{
-  display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:3px;
-  font-size:0.92rem;font-weight:600;text-decoration:none;
-  transition:transform 0.2s ease, background 0.2s ease, border-color .2s ease;
-  border:1px solid transparent;
-}
-.btn-primary{background:var(--teal);color:#07130f;}
-.btn-primary:hover{background:var(--teal-bright);transform:translateY(-2px);}
-.btn-ghost{border-color:var(--rule-ink);color:var(--text-on-ink);}
-.btn-ghost:hover{border-color:var(--teal-bright);color:var(--teal-bright);transform:translateY(-2px);}
+    /* Header Navigation - Clean, No Blur */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 22px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: transparent;
+      border-bottom: none;
+    }
 
-/* photo panel, right side, transparent PNG bleeding off edge */
-.hero-photo{
-  position:relative;
-  height:min(78vh,720px);
-  display:flex;
-  align-items:flex-start; /* image now starts at the TOP of the panel, level with the eyebrow line */
-  justify-content:center;
-  opacity:0;
-  animation:photoIn 1.1s cubic-bezier(.2,.8,.2,1) forwards;
-  animation-delay:.3s;
-}
-@keyframes photoIn{
-  from{opacity:0;transform:scale(0.92) translateY(24px);}
-  to{opacity:1;transform:scale(1) translateY(0);}
-}
-.hero-photo .glow{
-  position:absolute;
-  right:-10%;
-  bottom:0;
-  width:120%;
-  height:75%;
-  background:radial-gradient(closest-side, rgba(79,195,176,0.28), transparent 70%);
-  filter:blur(10px);
-  pointer-events:none;
-}
-.hero-photo .rule{
-  position:absolute;
-  left:0; top:0; bottom:60px;
-  width:1px;
-  background:linear-gradient(180deg, transparent, var(--rule-ink) 20%, var(--rule-ink) 80%, transparent);
-  transform-origin:top;
-  transform:scaleY(0);
-  animation:ruleDraw 1s ease forwards;
-  animation-delay:1s;
-}
-@keyframes ruleDraw{to{transform:scaleY(1);}}
-.hero-photo img{
-  position:relative;
-  z-index:1;
-  max-height:100%;
-  width:auto;
-  object-fit:contain;
-  filter:drop-shadow(0 30px 40px rgba(0,0,0,0.45));
-  will-change:transform;
-}
-.hero-photo .id-tag{
-  position:absolute;
-  left:8%;
-  bottom:6%;
-  z-index:2;
-  background:rgba(8,14,24,0.72);
-  border:1px solid var(--rule-ink);
-  backdrop-filter:blur(6px);
-  padding:10px 16px;
-  border-radius:3px;
-  font-size:0.72rem;
-  letter-spacing:0.04em;
-  color:var(--text-on-ink-dim);
-  opacity:0;
-  animation:riseIn .6s ease forwards;
-  animation-delay:1.3s;
-}
-.scroll-cue{
-  position:absolute;
-  left:32px;
-  bottom:28px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:0.78rem;
-  color:var(--text-on-ink-dim);
-  z-index:2;
-  opacity:0;
-  animation:riseIn .6s ease forwards;
-  animation-delay:1.5s;
-}
-.scroll-cue .line{width:24px;height:1px;background:var(--text-on-ink-dim);position:relative;overflow:hidden;}
-.scroll-cue .line::after{content:"";position:absolute;left:-100%;top:0;width:100%;height:100%;background:var(--teal-bright);animation:cueSlide 1.8s ease-in-out infinite;}
-@keyframes cueSlide{50%{left:100%;}100%{left:100%;}}
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      text-decoration: none;
+    }
 
-@media (prefers-reduced-motion: reduce){
-  .eyebrow-line,.hero h1 .line span,.hero p.role,.hero p.lede,.hero-actions,.hero-photo,.hero-photo .rule,.hero-photo .id-tag,.scroll-cue{
-    animation:none !important; opacity:1 !important; transform:none !important;
-  }
-}
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
 
-/* ---------- REVEAL ON SCROLL ---------- */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s ease;}
-.reveal.is-visible{opacity:1;transform:translateY(0);}
-.reveal-stagger > *{opacity:0;transform:translateY(20px);transition:opacity .6s ease, transform .6s ease;}
-.reveal-stagger.is-visible > *{opacity:1;transform:translateY(0);}
-.reveal-stagger.is-visible > *:nth-child(1){transition-delay:.05s;}
-.reveal-stagger.is-visible > *:nth-child(2){transition-delay:.14s;}
-.reveal-stagger.is-visible > *:nth-child(3){transition-delay:.23s;}
-.reveal-stagger.is-visible > *:nth-child(4){transition-delay:.32s;}
-.reveal-stagger.is-visible > *:nth-child(5){transition-delay:.41s;}
-.reveal-stagger.is-visible > *:nth-child(6){transition-delay:.5s;}
-@media (prefers-reduced-motion: reduce){
-  .reveal,.reveal-stagger > *{opacity:1 !important;transform:none !important;transition:none !important;}
-}
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
 
-/* ---------- SECTION SHELL ---------- */
-section{padding:100px 0;}
-.section-ink{background:var(--ink);color:var(--text-on-ink);}
-.section-paper{background:var(--paper);color:var(--text-on-paper);}
-.kicker{font-size:0.88rem;margin:0 0 10px;}
-.kicker.on-paper{color:var(--teal);}
-.kicker.on-ink{color:var(--teal-bright);}
-.section-head{max-width:640px;margin-bottom:52px;}
-.section-head h2{font-size:clamp(1.9rem, 3.2vw, 2.5rem);}
-.section-head p{margin-top:14px;font-size:1.02rem;line-height:1.6;}
-.section-paper .section-head p{color:var(--text-on-paper-dim);}
-.section-ink .section-head p{color:var(--text-on-ink-dim);}
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
 
-/* ---------- ABOUT ---------- */
-.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:start;}
-.about-grid p{font-size:1.05rem;line-height:1.75;color:var(--text-on-paper-dim);margin:0 0 18px;}
-.about-media{
-  border-radius:6px;
-  overflow:hidden;
-  aspect-ratio:4/5;
-  background:var(--paper-warm) center/cover no-repeat;
-  border:1px solid var(--rule-paper);
-  position:relative;
-}
-.about-media img,.about-media video{width:100%;height:100%;object-fit:cover;}
-.media-note{
-  position:absolute;inset:auto 0 0 0;
-  background:rgba(14,23,38,0.7);
-  color:var(--text-on-ink-dim);
-  font-size:0.7rem;letter-spacing:0.03em;
-  padding:8px 12px;
-}
-.facts{border-top:1px solid var(--rule-paper);margin-top:30px;}
-.fact-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--rule-paper);font-size:0.94rem;}
-.fact-row .label{color:var(--text-on-paper-dim);}
-.fact-row .value{font-weight:600;text-align:right;}
-.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;}
-.stat{border-top:2px solid var(--teal);padding-top:12px;}
-.stat .num{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--text-on-paper);}
-.stat .num sup{font-size:1.2rem;}
-.stat .lbl{font-size:0.82rem;color:var(--text-on-paper-dim);margin-top:4px;}
+    .nav-links a:hover {
+      color: #ffffff;
+    }
 
-/* ---------- TIMELINE with drawing line ---------- */
-.timeline{position:relative;margin-top:8px;}
-.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:var(--rule-ink);}
-.timeline .timeline-fill{
-  position:absolute;left:7px;top:6px;width:1px;background:var(--teal-bright);
-  height:0%;transition:height 1.4s ease;
-}
-.section-paper .timeline::before{background:var(--rule-paper);}
-.t-item{position:relative;padding:0 0 46px 40px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;}
-.t-item:last-child{padding-bottom:0;}
-.t-dot{position:absolute;left:0;top:4px;width:15px;height:15px;border-radius:50%;background:var(--ink);border:2px solid var(--teal-bright);}
-.section-paper .t-dot{background:var(--paper);border-color:var(--teal);}
-.t-date{font-size:0.82rem;color:var(--teal-bright);margin-bottom:6px;font-weight:600;}
-.section-paper .t-date{color:var(--teal);}
-.t-title{font-family:var(--serif);font-size:1.22rem;font-weight:600;margin:0 0 3px;}
-.t-org{font-size:0.92rem;color:var(--text-on-ink-dim);margin-bottom:10px;}
-.section-paper .t-org{color:var(--text-on-paper-dim);}
-.t-detail{font-size:0.94rem;line-height:1.6;color:var(--text-on-ink-dim);max-width:60ch;}
-.section-paper .t-detail{color:var(--text-on-paper-dim);}
-.t-detail ul{margin:8px 0 0;padding-left:18px;}
-.t-detail li{margin-bottom:5px;}
-.t-media{
-  width:150px;height:110px;border-radius:5px;overflow:hidden;flex-shrink:0;
-  border:1px solid var(--rule-ink);
-  background:var(--ink-deep) center/cover no-repeat;
-  position:relative;
-  transition:transform .35s ease;
-}
-.section-paper .t-media{background:var(--paper-warm);border-color:var(--rule-paper);}
-.t-media:hover{transform:translateY(-4px) scale(1.02);}
-.t-media img,.t-media video{width:100%;height:100%;object-fit:cover;}
-.t-media .plus{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-size:1.6rem;color:var(--text-on-ink-dim);opacity:.5;
-}
-@media (max-width:700px){ .t-item{grid-template-columns:1fr;} .t-media{width:100%;height:150px;order:-1;} }
+    .btn-orange {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #ff5500;
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
 
-/* ---------- SKILLS ---------- */
-.skill-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 48px;}
-.skill-group h3{font-family:var(--sans);font-size:0.82rem;font-weight:700;color:var(--teal);margin-bottom:14px;letter-spacing:0.01em;}
-.chips{display:flex;flex-wrap:wrap;gap:9px;}
-.chip{
-  font-size:0.86rem;padding:7px 14px;border-radius:20px;border:1px solid var(--rule-paper);
-  color:var(--text-on-paper);background:var(--paper-warm);
-  transition:background .2s ease, transform .2s ease, border-color .2s ease;
-}
-.chip:hover{background:var(--teal);color:#07130f;border-color:var(--teal);transform:translateY(-2px);}
+    .btn-orange:hover {
+      background-color: #ff661a;
+      transform: translateY(-1px);
+    }
 
-/* ---------- PROJECT SPOTLIGHT ---------- */
-.spotlight{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;}
-.spot-visual{
-  position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;
-  background:linear-gradient(160deg,#16233b,#0c1524);
-  border:1px solid var(--rule-ink);
-}
-.spot-visual video,.spot-visual img{width:100%;height:100%;object-fit:cover;}
-.spot-visual .tag{
-  position:absolute;top:20px;left:20px;font-size:0.72rem;color:var(--teal-bright);
-  background:rgba(8,14,24,0.75);padding:5px 11px;border-radius:3px;letter-spacing:0.03em;z-index:2;
-}
-.spot-visual .play{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  z-index:2;
-}
-.spot-visual .play span{
-  width:64px;height:64px;border-radius:50%;
-  background:rgba(79,195,176,0.18);border:1.5px solid var(--teal-bright);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--teal-bright);font-size:0;
-  transition:transform .3s ease, background .3s ease;
-}
-.spot-visual .play span::before{
-  content:"";width:0;height:0;
-  border-left:16px solid var(--teal-bright);
-  border-top:10px solid transparent;border-bottom:10px solid transparent;
-  margin-left:5px;
-}
-.spot-visual:hover .play span{transform:scale(1.08);background:rgba(79,195,176,0.3);}
-.spotlight h2{font-size:clamp(1.7rem,2.8vw,2.2rem);margin-bottom:16px;}
-.spotlight p{color:var(--text-on-ink-dim);line-height:1.7;margin:0 0 14px;}
+    .btn-icon {
+      width: 24px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
 
-/* ---------- ACHIEVEMENTS ---------- */
-.ach-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
-.ach-cols h3{font-family:var(--sans);font-size:0.82rem;font-weight:700;color:var(--teal);margin-bottom:16px;letter-spacing:0.01em;}
-.ach-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule-paper);}
-.ach-list li{
-  padding:12px 0;border-bottom:1px solid var(--rule-paper);font-size:0.94rem;line-height:1.5;color:var(--text-on-paper-dim);
-  display:flex;gap:10px;align-items:flex-start;
-}
-.ach-list li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold);margin-top:8px;flex-shrink:0;}
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px;}
-.gallery figure{margin:0;aspect-ratio:1;border-radius:6px;overflow:hidden;background:var(--ink);position:relative;border:1px solid var(--rule-ink);}
-.gallery img,.gallery video{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
-.gallery figure:hover img,.gallery figure:hover video{transform:scale(1.08);}
-.gallery figcaption{
-  position:absolute;inset:auto 0 0 0;background:linear-gradient(0deg,rgba(8,14,24,0.85),transparent);
-  color:var(--text-on-ink-dim);font-size:0.68rem;padding:16px 10px 8px;
-}
-@media (max-width:760px){ .gallery{grid-template-columns:repeat(2,1fr);} }
+    /* Page Main Content Container */
+    main {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+    }
 
-/* ---------- CONTACT / FOOTER ---------- */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;}
-.contact-grid h2{font-size:clamp(2rem,4vw,2.8rem);max-width:12ch;}
-.contact-links{display:flex;flex-direction:column;gap:4px;}
-.contact-links a{
-  display:block;padding:16px 0;border-bottom:1px solid var(--rule-ink);text-decoration:none;
-  color:var(--text-on-ink);font-size:1.05rem;transition:color 0.2s ease, padding-left 0.2s ease;
-}
-.contact-links a:hover{color:var(--teal-bright);padding-left:6px;}
-.contact-links span{display:block;font-size:0.75rem;color:var(--text-on-ink-dim);margin-bottom:2px;}
-footer{padding:28px 0;text-align:center;font-size:0.82rem;color:var(--text-on-ink-dim);background:var(--ink-deep);}
+    .section-container {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
 
-@media (max-width:860px){
-  .hero .wrap{grid-template-columns:1fr;align-items:center;text-align:left;}
-  .hero-photo{order:-1;height:340px;margin-bottom:12px;}
-  .hero-photo .rule{display:none;}
-  .about-grid,.skill-groups,.spotlight,.ach-cols,.contact-grid{grid-template-columns:1fr;}
-  .about-media{order:-1;aspect-ratio:16/9;}
-  .stat-row{grid-template-columns:1fr 1fr;}
-}
-</style>
+    /* Hero Section - Split Left/Right Layout */
+    .hero-section {
+      min-height: 100vh;
+      padding-top: 150px;
+      padding-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-main-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .hero-left {
+      max-width: 50%;
+    }
+
+    .hero-left-eyebrow {
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: clamp(52px, 7.5vw, 96px);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -2px;
+      color: #ffffff;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-right {
+      max-width: 380px;
+      text-align: left;
+      padding-top: 28px;
+    }
+
+    .hero-subtitle-box {
+      font-size: clamp(22px, 2.6vw, 34px);
+      font-weight: 700;
+      line-height: 1.25;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+
+    .hero-desc-box {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .serif-italic {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      color: #ffffff;
+    }
+
+    /* Services Grid at Bottom of Hero with Glass Blur */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 80px;
+      padding: 32px 36px;
+      background: rgba(12, 10, 10, 0.45);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+    }
+
+    .service-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .service-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ff5500;
+    }
+
+    .service-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    /* Brands Banner with Glass Blur */
+    .brands-section {
+      width: 100%;
+      padding: 36px 0;
+      background: rgba(10, 10, 10, 0.4);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .brands-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .brands-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 140px;
+      line-height: 1.3;
+    }
+
+    .brands-logos {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: -0.3px;
+    }
+
+    .brand-icon {
+      font-size: 18px;
+    }
+
+    /* Marketing Agency Stats Section with Glassmorphism Blur */
+    .stats-section {
+      padding: 90px 0;
+    }
+
+    .stats-card {
+      background: rgba(12, 10, 10, 0.45);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 28px;
+      padding: 54px 64px;
+      transition: border-color 0.3s ease;
+    }
+
+    .stats-card:hover {
+      border-color: rgba(255, 85, 0, 0.4);
+    }
+
+    .stats-top {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 48px;
+      align-items: flex-start;
+      margin-bottom: 56px;
+    }
+
+    .stats-left {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .hub-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.75);
+      border-left: 2px solid rgba(255, 255, 255, 0.4);
+      padding-left: 12px;
+    }
+
+    .social-pills {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-pill {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .social-pill.active {
+      background-color: #ff5500;
+      color: #ffffff;
+    }
+
+    .social-pill.secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-pill:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .agency-headline {
+      font-size: clamp(22px, 2.8vw, 36px);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.35;
+      letter-spacing: -0.5px;
+    }
+
+    .agency-headline .highlight {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(48px, 5.5vw, 84px);
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .stat-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 16px;
+    }
+
+    .dot-orange {
+      width: 6px;
+      height: 6px;
+      background-color: #ff5500;
+      display: inline-block;
+      border-radius: 1px;
+    }
+
+    .stat-line {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #ff5500 0%, rgba(255, 85, 0, 0.3) 70%, transparent 100%);
+    }
+
+    /* Behind the Designs Section */
+    .about-section {
+      padding: 90px 0 60px 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .eyebrow-orange {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ff5500;
+      margin-bottom: 16px;
+    }
+
+    .about-heading {
+      font-size: clamp(34px, 4.5vw, 54px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      color: #ffffff;
+    }
+
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding-top: 12px;
+    }
+
+    .about-lead {
+      font-size: clamp(17px, 2vw, 22px);
+      font-weight: 600;
+      line-height: 1.4;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .about-subtext {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .about-action {
+      margin-top: 8px;
+    }
+
+    /* Showcase Cards Section */
+    .showcase-section {
+      padding: 60px 0 100px 0;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .showcase-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: rgba(15, 15, 15, 0.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      aspect-ratio: 0.85;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .showcase-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 85, 0, 0.6);
+    }
+
+    .showcase-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%) contrast(105%);
+      transition: filter 0.3s ease;
+    }
+
+    .showcase-card:hover img {
+      filter: grayscale(80%) contrast(110%);
+    }
+
+    /* Contact / Lead Form Section with Frosted Glass Box */
+    .contact-section {
+      padding: 100px 0 140px 0;
+    }
+
+    .contact-card-wrap {
+      background: transparent;
+      border: none;
+      border-radius: 32px;
+      padding: 64px 64px;
+    }
+
+    .contact-header {
+      margin-bottom: 60px;
+    }
+
+    .contact-title-wrap {
+      position: relative;
+    }
+
+    .contact-title {
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
+
+    .contact-title .row-top {
+      font-size: clamp(40px, 6.5vw, 84px);
+      display: block;
+      color: #ffffff;
+    }
+
+    .contact-title .row-grow {
+      font-size: clamp(52px, 9vw, 120px);
+      display: inline-block;
+      color: #ffffff;
+    }
+
+    .contact-title .row-sub {
+      font-size: clamp(28px, 4.5vw, 64px);
+      color: rgba(255, 255, 255, 0.9);
+      margin-left: 12px;
+    }
+
+    .lets-talk-box {
+      position: absolute;
+      top: 10px;
+      right: 0;
+      max-width: 220px;
+      padding: 12px 16px;
+      border-left: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .lets-talk-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.7);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .lets-talk-desc {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.4;
+    }
+
+    .contact-form {
+      width: 100%;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px 64px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-group label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.85);
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 12px 0;
+      color: #ffffff;
+      font-size: 15px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-bottom-color: #ff5500;
+    }
+
+    .select-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .select-wrapper select {
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      padding-right: 24px;
+    }
+
+    .select-wrapper select option {
+      background: #0d0d0d;
+      color: #ffffff;
+    }
+
+    .select-arrow {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.5);
+      pointer-events: none;
+    }
+
+    .form-submit-row {
+      margin-top: 56px;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .btn-submit {
+      border: none;
+      cursor: pointer;
+      padding: 14px 32px;
+      font-size: 15px;
+    }
+
+    /* Tailored Services Cards with Glass Blur */
+    .tailored-card {
+      background: rgba(15, 12, 12, 0.4);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 420px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .tailored-card:hover {
+      border-color: rgba(255, 85, 0, 0.6);
+      transform: translateY(-4px);
+    }
+
+    /* Grand "Let's Connect" Footer Section */
+    .connect-section {
+      padding: 100px 0 60px 0;
+    }
+
+    .connect-card {
+      background: rgba(12, 10, 10, 0.5);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 36px;
+      padding: 80px 64px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .connect-eyebrow {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #ff5500;
+      margin-bottom: 20px;
+    }
+
+    .connect-title {
+      font-size: clamp(42px, 6vw, 88px);
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -2px;
+      color: #ffffff;
+      margin-bottom: 28px;
+    }
+
+    .connect-desc {
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 640px;
+      margin-bottom: 48px;
+      line-height: 1.5;
+    }
+
+    .connect-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 64px;
+    }
+
+    .btn-lg {
+      padding: 16px 36px;
+      font-size: 16px;
+    }
+
+    .social-links-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      width: 100%;
+    }
+
+    .social-link {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .social-link:hover {
+      color: #ff5500;
+    }
+
+    /* ===== PREMIUM FOOTER STYLES ===== */
+    .site-footer {
+      position: relative;
+      z-index: 10;
+      padding: 0 0 0 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Footer Top: Brand + Nav links */
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 80px 0 64px 0;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand-col {
+      max-width: 400px;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .footer-tagline {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 36px;
+    }
+
+    .footer-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #ff5500;
+      color: #ffffff;
+      padding: 13px 26px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .footer-cta-btn:hover {
+      background-color: #ff661a;
+      transform: translateY(-2px);
+    }
+
+    /* Footer Nav Columns */
+    .footer-nav-cols {
+      display: flex;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav-col h4 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 24px;
+    }
+
+    .footer-nav-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-nav-col ul li a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav-col ul li a:hover {
+      color: #ff5500;
+    }
+
+    /* Footer Divider */
+    .footer-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      width: 100%;
+    }
+
+    /* Footer Social Row */
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 0 60px 0;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.35);
+      line-height: 1.5;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-social-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.7);
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .footer-social-btn:hover {
+      background: #ff5500;
+      border-color: #ff5500;
+      color: #ffffff;
+      transform: translateY(-3px);
+    }
+
+    .footer-social-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* Footer About Block — kept for possible reuse, hidden now */
+    .footer-about-block {
+      display: none;
+    }
+
+    /* ===== ABOUT GROWAZ + SERVICES SECTION ===== */
+    .growaz-section {
+      position: relative;
+      z-index: 10;
+      padding: 120px 0 0 0;
+    }
+
+    .growaz-about-block {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 100px auto;
+    }
+
+    .growaz-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.45);
+      display: block;
+      margin-bottom: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    .growaz-statement {
+      font-size: clamp(18px, 2.2vw, 28px);
+      font-weight: 500;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 40px;
+      letter-spacing: -0.3px;
+    }
+
+    .growaz-about-btn-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Services that are tailored */
+    .growaz-services-block {
+      padding-bottom: 120px;
+    }
+
+    .growaz-services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .growaz-services-headline {
+      font-size: clamp(42px, 5.5vw, 76px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+    }
+
+    .growaz-tailored-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .growaz-card {
+      background: rgba(15, 12, 12, 0.4);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 420px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .growaz-card:hover {
+      border-color: rgba(255, 85, 0, 0.6);
+      transform: translateY(-4px);
+    }
+
+    @media (max-width: 1024px) {
+      .growaz-tailored-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .growaz-services-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .growaz-tailored-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.5);
+      display: block;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-statement {
+      font-size: clamp(20px, 2.5vw, 32px);
+      font-weight: 500;
+      line-height: 1.4;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 36px;
+      letter-spacing: -0.5px;
+    }
+
+    .footer-about-btn-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn-pill-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 10px 24px;
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-pill-dark:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 85, 0, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .pill-orange-icon {
+      width: 26px;
+      height: 26px;
+      background-color: #ff5500;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .footer-services-block {
+      margin-bottom: 80px;
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .services-headline {
+      font-size: clamp(42px, 5.5vw, 76px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+    }
+
+    .tailored-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .card-num {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 32px;
+      color: #ffffff;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    .btn-plus {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background-color: #ff5500;
+      color: #ffffff;
+      border: none;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-plus:hover {
+      transform: scale(1.1);
+    }
+
+    .sub-footer {
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Preloader */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #000000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
+    }
+
+    .loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-bar-bg {
+      width: 200px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 16px;
+    }
+
+    .loader-bar-fill {
+      width: 0%;
+      height: 100%;
+      background: #ff5500;
+      transition: width 0.1s linear;
+    }
+
+    .loader-text {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.7;
+      font-weight: 600;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 1024px) {
+      .hero-main-content {
+        flex-direction: column;
+        gap: 32px;
+      }
+      .hero-left, .hero-right {
+        max-width: 100%;
+      }
+      .stats-top {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .tailored-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      .contact-card-wrap {
+        padding: 40px 28px;
+      }
+      .contact-title-wrap .lets-talk-box {
+        position: relative;
+        top: 0;
+        margin-top: 24px;
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 18px 5%;
+      }
+      .nav-links {
+        display: none;
+      }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 16px;
+        margin-top: 48px;
+        padding: 24px;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 32px;
+      }
+      .showcase-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px;
+      }
+      .tailored-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .brands-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .brands-logos {
+        gap: 24px;
+      }
+      .contact-title .row-sub {
+        margin-left: 0;
+        display: block;
+      }
+      .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .connect-card {
+        padding: 48px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .btn-orange {
+        width: 100%;
+        justify-content: center;
+      }
+      .connect-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+      .connect-actions a {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="progress" id="progress"></div>
-
-<nav>
-  <div class="wrap">
-    <a class="brand" href="#top">Tanveer<em>.</em></a>
-    <ul class="navlinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#project">Project</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ============ HERO ============ -->
-<header class="hero" id="top">
-  <div class="wrap">
-    <div class="hero-text">
-      <p class="eyebrow-line"><span class="dot"></span> Sanghar, Sindh, Pakistan</p>
-      <h1>
-        <span class="line"><span style="animation-delay:.25s">Tanveer</span></span>
-        <span class="line"><span style="animation-delay:.35s">Ahmed</span></span>
-        <span class="line last"><span style="animation-delay:.45s">Rajput</span></span>
-      </h1>
-      <p class="role">JEST, Government of Sindh</p>
-      <p class="lede">I am a Computer Systems Engineer by education and a teacher by passion.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="images/Tanveer_Ahmed_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-        <a class="btn btn-ghost" href="mailto:tanveerrajput0894@gmail.com">Email Me</a>
-      </div>
-    </div>
-
-    <div class="hero-photo" id="heroPhoto">
-      <div class="glow"></div>
-      <div class="rule"></div>
-      <img src="images/tanveer-cutout.svg" alt="Tanveer Ahmed Rajput" id="tiltPhoto">
-      <div class="id-tag">SELD · SINDH &nbsp;·&nbsp; ENGINEER TURNED EDUCATOR</div>
+  <!-- Minimal Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-text" id="loader-text">Loading 0%</div>
+    <div class="loader-bar-bg">
+      <div class="loader-bar-fill" id="loader-fill"></div>
     </div>
   </div>
-  <div class="scroll-cue"><span class="line"></span> SCROLL</div>
-</header>
 
-<!-- ============ ABOUT ============ -->
-<section class="section-paper" id="about">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="kicker on-paper">About</p>
-      <h2>Two disciplines, one habit of building things properly</h2>
-    </div>
-    <div class="about-grid">
-      <div class="reveal">
-        <p>I've spent over four years teaching in Pakistani government and private schools, currently serving as a Junior Elementary School Teacher (BPS-14) under SELD Sindh, after starting as a Primary School Teacher in the same department.</p>
-        <p>Before the classroom, I trained as a Computer Systems Engineer at Mehran University, and later taught Java and Android development at GEXTON Inc. That mix shows up in how I teach — I like clear structure, measurable progress, and tools that actually work — and in the side projects I still build, from augmented reality demos to this website.</p>
-        <div class="stat-row">
-          <div class="stat"><div class="num">4<sup>+</sup></div><div class="lbl">Years teaching</div></div>
-          <div class="stat"><div class="num">2</div><div class="lbl">Degrees earned</div></div>
-          <div class="stat"><div class="num">65</div><div class="lbl">WPM typing speed</div></div>
-        </div>
-        <div class="facts">
-          <div class="fact-row"><span class="label">Based in</span><span class="value">Hyderabad, Pakistan</span></div>
-          <div class="fact-row"><span class="label">Current role</span><span class="value">JEST, GBHSS Maqsoodo Rind, Shahdadpur</span></div>
-          <div class="fact-row"><span class="label">Teaching since</span><span class="value">May 2022</span></div>
-          <div class="fact-row"><span class="label">Engineering degree</span><span class="value">MUET Jamshoro, 2017</span></div>
-          <div class="fact-row"><span class="label">B.Ed</span><span class="value">SBBU Shaheed Benazirabad, 2025</span></div>
-        </div>
-      </div>
-      <!-- REPLACE: put a photo/video of you teaching or at work at images/about.jpg (or .mp4) -->
-      <div class="about-media reveal" style="background-image:url('images/tanveer.jpg')">
-        <div class="media-note">📷 Add a classroom or workspace photo here — images/about.jpg</div>
-      </div>
-    </div>
+  <!-- Canvas Animation Layer -->
+  <div class="canvas-container">
+    <canvas id="animation-canvas"></canvas>
   </div>
-</section>
 
-<!-- ============ EDUCATION ============ -->
-<section class="section-ink" id="education">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="kicker on-ink">Education</p>
-      <h2>From a cadet college classroom to an engineering degree</h2>
-    </div>
-    <div class="timeline">
-      <div class="timeline-fill" id="fillEdu"></div>
+  <!-- Header Navigation -->
+  <header>
+    <a href="#" class="logo">Folioblox</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-orange">
+        Get in touch
+        <span class="btn-icon">➔</span>
+      </a>
+    </nav>
+  </header>
 
-      <div class="t-item">
-        <div>
-          <div class="t-dot"></div>
-          <div class="t-date">2025</div>
-          <div class="t-title">Bachelor of Education (1.5 years)</div>
-          <div class="t-org">Shaheed Benazir Bhutto University, Shaheed Benazirabad — 1st Division</div>
+  <!-- Page Sections Container -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-section section-container" id="home">
+      <div class="hero-main-content">
+        <!-- Left Side Title -->
+        <div class="hero-left">
+          <p class="hero-left-eyebrow">Hey, I'm a</p>
+          <h1 class="hero-title">Creative<br>Director</h1>
         </div>
-        <!-- REPLACE: certificate photo/scan -->
-        <div class="t-media"><span class="plus">+</span></div>
+
+        <!-- Right Side Subtitle -->
+        <div class="hero-right">
+          <h3 class="hero-subtitle-box">Great design<br>should feel <span class="serif-italic">invisible.</span></h3>
+          <p class="hero-desc-box">From logo to language, I build brands that connect and convert.</p>
+        </div>
       </div>
 
-      <div class="t-item">
-        <div>
-          <div class="t-dot"></div>
-          <div class="t-date">2017</div>
-          <div class="t-title">B.E, Computer Systems Engineering</div>
-          <div class="t-org">Mehran University of Engineering &amp; Technology, Jamshoro — First Division, CGPA 3.13/4</div>
+      <!-- Services Grid -->
+      <div class="services-grid">
+        <div class="service-item">
+          <span class="service-num">#01</span>
+          <span class="service-title">Brand Strategy</span>
         </div>
-        <div class="t-media"><span class="plus">+</span></div>
+        <div class="service-item">
+          <span class="service-num">#02</span>
+          <span class="service-title">Brand Identity Design</span>
+        </div>
+        <div class="service-item">
+          <span class="service-num">#03</span>
+          <span class="service-title">Packaging Design</span>
+        </div>
+        <div class="service-item">
+          <span class="service-num">#04</span>
+          <span class="service-title">Creative Direction</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brands Strip -->
+    <section class="brands-section">
+      <div class="section-container brands-content">
+        <p class="brands-label">Trusted by Brands I've Helped Shape</p>
+        <div class="brands-logos">
+          <div class="brand-logo"><span class="brand-icon">⚪</span> Supa Blox</div>
+          <div class="brand-logo"><span class="brand-icon">⌛</span> Hype Blox</div>
+          <div class="brand-logo"><span class="brand-icon">🌓</span> Frame Blox</div>
+          <div class="brand-logo"><span class="brand-icon">🌗</span> Ultra Blox</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results-Driven Marketing Agency Stats Section -->
+    <section class="stats-section section-container">
+      <div class="stats-card">
+        <div class="stats-top">
+          <div class="stats-left">
+            <div class="hub-tag">
+              <span class="hub-icon">🌐</span>
+              <span class="hub-text">Hub support peoples from all over the world</span>
+            </div>
+            <div class="social-pills">
+              <a href="#" class="social-pill active">𝕏</a>
+              <a href="#" class="social-pill secondary">in</a>
+              <a href="#" class="social-pill secondary">🏀</a>
+            </div>
+          </div>
+          <div class="stats-right">
+            <p class="agency-headline">
+              We're a <span class="highlight">results-driven marketing agency passionate</span> about crafting impactful campaigns that growth for our clients
+            </p>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">86+</div>
+            <div class="stat-label">
+              <span class="dot-orange"></span> Project Done
+            </div>
+            <div class="stat-line"></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">
+              <span class="dot-orange"></span> Successful Rating
+            </div>
+            <div class="stat-line"></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">223m</div>
+            <div class="stat-label">
+              <span class="dot-orange"></span> Growth Net Worth
+            </div>
+            <div class="stat-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Behind the Designs Section -->
+    <section class="about-section section-container" id="about">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow-orange">Behind the Designs</p>
+          <h2 class="about-heading">Shaping<br>Experiences That<br>Make Life Simpler</h2>
+        </div>
+
+        <div class="about-right">
+          <p class="about-lead">I'm a product designer focused on building clean, intuitive interfaces that solve real-world problems.</p>
+          <div>
+            <p class="about-subtext">Let's Build Something Meaningful Together</p>
+          </div>
+          <div class="about-action">
+            <a href="#contact" class="btn-orange">
+              Get in touch
+              <span class="btn-icon">➔</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase Cards Grid -->
+    <section class="showcase-section section-container" id="projects">
+      <div class="showcase-grid">
+        <div class="showcase-card">
+          <img src="./images/showcase_jacket.png" alt="Showcase Jacket" />
+        </div>
+        <div class="showcase-card">
+          <img src="./images/showcase_headphones.png" alt="Showcase Headphones" />
+        </div>
+        <div class="showcase-card">
+          <img src="./images/showcase_bottle.png" alt="Showcase Cosmetic Bottle" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Lead Form Section -->
+    <section class="contact-section section-container" id="contact">
+      <div class="contact-card-wrap">
+        <div class="contact-header">
+          <div class="contact-title-wrap">
+            <h2 class="contact-title">
+              <span class="row-top">READY TO</span>
+              <span class="row-grow">GROW</span>
+              <span class="row-sub">& SCALE YOUR COMPANY?</span>
+            </h2>
+            <div class="lets-talk-box">
+              <span class="lets-talk-tag">LET'S TALK</span>
+              <p class="lets-talk-desc">Unique overall approach to empower us on our next campaign.</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="event.preventDefault();">
+          <div class="form-grid">
+            <!-- Row 1 -->
+            <div class="form-group">
+              <label for="name">YOUR NAME*</label>
+              <input type="text" id="name" placeholder="John Raddison" required />
+            </div>
+            <div class="form-group">
+              <label for="number">YOUR NUMBER*</label>
+              <input type="tel" id="number" placeholder="+1 (514) 231 4567" required />
+            </div>
+
+            <!-- Row 2 -->
+            <div class="form-group">
+              <label for="email">YOUR EMAIL*</label>
+              <input type="email" id="email" placeholder="johnraddison@gmail.com" required />
+            </div>
+            <div class="form-group">
+              <label for="business-age">HOW LONG HAVE YOU BEEN IN BUSINESS?</label>
+              <div class="select-wrapper">
+                <select id="business-age">
+                  <option>0-1 year</option>
+                  <option>1-3 years</option>
+                  <option>3-5 years</option>
+                  <option>5+ years</option>
+                </select>
+                <span class="select-arrow">❯</span>
+              </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="form-group">
+              <label for="scaling-challenge">WHAT'S YOUR BIGGEST CHALLENGE IN SCALING RIGHT NOW?</label>
+              <div class="select-wrapper">
+                <select id="scaling-challenge">
+                  <option>What to scale up</option>
+                  <option>Lead generation & sales</option>
+                  <option>Brand positioning</option>
+                  <option>Operational bottlenecks</option>
+                </select>
+                <span class="select-arrow">❯</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="marketing-spend">HOW MUCH DO YOU SPEND ON MARKETING EACH MONTH?</label>
+              <div class="select-wrapper">
+                <select id="marketing-spend">
+                  <option>What to scale up</option>
+                  <option>$5,000 - $10,000</option>
+                  <option>$10,000 - $25,000</option>
+                  <option>$25,000 - $50,000</option>
+                  <option>$50,000+</option>
+                </select>
+                <span class="select-arrow">❯</span>
+              </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="form-group">
+              <label for="annual-revenue">WHAT'S YOUR ESTIMATED ANNUAL REVENUE?</label>
+              <div class="select-wrapper">
+                <select id="annual-revenue">
+                  <option>0-$250k</option>
+                  <option>$250k-$1M</option>
+                  <option>$1M-$5M</option>
+                  <option>$5M+</option>
+                </select>
+                <span class="select-arrow">❯</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="paid-ads">ARE YOU RUNNING PAID ADS RIGHT NOW?</label>
+              <div class="select-wrapper">
+                <select id="paid-ads">
+                  <option>No</option>
+                  <option>Yes — Meta / Google</option>
+                  <option>Yes — TikTok / LinkedIn</option>
+                  <option>Planning to start soon</option>
+                </select>
+                <span class="select-arrow">❯</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" class="btn-orange btn-submit">
+              Submit Inquiry
+              <span class="btn-icon">➔</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Let's Connect Section -->
+    <section class="connect-section section-container" id="connect">
+      <div class="connect-card">
+        <span class="connect-eyebrow">HAVE A PROJECT IN MIND?</span>
+        <h2 class="connect-title">LET'S CONNECT &<br>BUILD SOMETHING<br><span class="serif-italic">extraordinary</span></h2>
+        <p class="connect-desc">Whether you need brand identity, product design, or creative direction — let's bring your vision to life.</p>
+        
+        <div class="connect-actions">
+          <a href="mailto:hello@folioblox.com" class="btn-orange btn-lg">
+            Start a Project
+            <span class="btn-icon">➔</span>
+          </a>
+          <a href="#contact" class="btn-pill-dark btn-lg">
+            Book a Discovery Call
+          </a>
+        </div>
+
+        <div class="social-links-row">
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Twitter / 𝕏</a>
+          <a href="#" class="social-link">LinkedIn</a>
+          <a href="#" class="social-link">Dribbble</a>
+          <a href="#" class="social-link">Behance</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Growaz + Services That Are Tailored Section -->
+    <section class="growaz-section section-container" id="services">
+
+      <!-- About Growaz Statement -->
+      <div class="growaz-about-block">
+        <span class="growaz-eyebrow">About Growaz</span>
+        <p class="growaz-statement">
+          Growaz is not just another design agency — it's a creative and innovative force helping businesses amplify their growth through exceptional design solutions. At Growaz, the mission is clear: to craft designs that are stunning but also strategically aligned with the goals and values of our team and clients.
+        </p>
+        <div class="growaz-about-btn-wrap">
+          <a href="#about" class="btn-pill-dark">
+            <span class="pill-orange-icon">»</span>
+            About us
+          </a>
+        </div>
       </div>
 
-      <div class="t-item">
-        <div>
-          <div class="t-dot"></div>
-          <div class="t-date">2013</div>
-          <div class="t-title">FSc, Pre-Engineering</div>
-          <div class="t-org">Cadet College Sanghar, Jam Nawaz Ali — 935/1100 (85%)</div>
+      <!-- Services that are tailored -->
+      <div class="growaz-services-block">
+        <div class="growaz-services-header">
+          <h2 class="growaz-services-headline">
+            Services that<br><span class="serif-italic">are tailored</span>
+          </h2>
+          <a href="#projects" class="btn-pill-dark">
+            <span class="pill-orange-icon">»</span>
+            View Projects
+          </a>
         </div>
-        <div class="t-media"><span class="plus">+</span></div>
-      </div>
 
-      <div class="t-item">
-        <div>
-          <div class="t-dot"></div>
-          <div class="t-date">2011</div>
-          <div class="t-title">SSC, Science</div>
-          <div class="t-org">Cadet College Sanghar, Jam Nawaz Ali — 753/850 (88.5%)</div>
+        <!-- 4-Column Service Cards -->
+        <div class="growaz-tailored-grid">
+
+          <!-- Card 1 -->
+          <div class="growaz-card">
+            <div>
+              <span class="card-num">01</span>
+              <h3 class="card-title">Brand<br>Strategy</h3>
+              <div class="card-tags">
+                <span class="tag">Development</span>
+                <span class="tag">Brand Guidelines</span>
+                <span class="tag">Analysis</span>
+                <span class="tag">Rebranding Services</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="btn-plus">+</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="growaz-card">
+            <div>
+              <span class="card-num">02</span>
+              <h3 class="card-title">Web<br>Design</h3>
+              <div class="card-tags">
+                <span class="tag">Development</span>
+                <span class="tag">Custom Website</span>
+                <span class="tag">Web Solutions</span>
+                <span class="tag">Responsive Web</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="btn-plus">+</button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="growaz-card">
+            <div>
+              <span class="card-num">03</span>
+              <h3 class="card-title">Digital<br>Marketing</h3>
+              <div class="card-tags">
+                <span class="tag">Email Marketing</span>
+                <span class="tag">Pay-Per-Click</span>
+                <span class="tag">SEO</span>
+                <span class="tag">Social Media marketing</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="btn-plus">+</button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="growaz-card">
+            <div>
+              <span class="card-num">04</span>
+              <h3 class="card-title">UI/UX<br>Design</h3>
+              <div class="card-tags">
+                <span class="tag">User Interface (UI)</span>
+                <span class="tag">Wireframing</span>
+                <span class="tag">Analysis</span>
+                <span class="tag">Mobile App UI Design</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="btn-plus">+</button>
+            </div>
+          </div>
+
         </div>
-        <div class="t-media"><span class="plus">+</span></div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ============ EXPERIENCE ============ -->
-<section class="section-paper" id="experience">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="kicker on-paper">Experience</p>
-      <h2>Classrooms, code, and a few years in between</h2>
-    </div>
-    <div class="timeline">
-      <div class="timeline-fill" id="fillExp"></div>
+  </main>
 
-      <div class="t-item">
-        <div>
-          <div class="t-dot"></div>
-          <div class="t-date">Sept 2022 — Present</div>
-          <div class="t-title">Junior Elementary School Teacher (BPS-14)</div>
-          <div class="t-org">SELD, Government of Sindh</div>
-          <div class="t-detail">
+  <!-- Premium Footer -->
+  <footer class="site-footer">
+    <div class="section-container">
+
+      <!-- Footer Top Row: Brand + Nav -->
+      <div class="footer-top">
+
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <a href="#" class="footer-logo">Folioblox</a>
+          <p class="footer-tagline">Creative direction, brand identity, and digital experiences crafted to make your brand unforgettable. Based globally, built for impact.</p>
+          <a href="mailto:hello@folioblox.com" class="footer-cta-btn">
+            Start a Project
+            <span class="btn-icon">➔</span>
+          </a>
+        </div>
+
+        <!-- Nav Columns -->
+        <div class="footer-nav-cols">
+          <div class="footer-nav-col">
+            <h4>Navigation</h4>
             <ul>
-              <li>Posted at GBLSS Jatia Shahdadpur on 3 Sept 2022, later transferred to GBHSS Maqsoodo Rind Shahdadpur under STR policy (Jan 2025).</li>
-              <li>Served as Enumerator for Pakistan's 7th Population &amp; 1st Digital Census (2023) and the School Census (Nov 2025).</li>
-              <li>Performed election duty in Pakistan's General Elections, 8 February 2024.</li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">Brand Strategy</a></li>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Digital Marketing</a></li>
+              <li><a href="#">UI/UX Design</a></li>
+              <li><a href="#">Creative Direction</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-col">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Twitter / 𝕏</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Dribbble</a></li>
+              <li><a href="#">Behance</a></li>
             </ul>
           </div>
         </div>
-        <!-- REPLACE: photo of the school / classroom / duty -->
-        <div class="t-media"><span class="plus">+</span></div>
       </div>
 
-      <div class="t-item">
-        <div>
-          <div class="t-dot"></div>
-          <div class="t-date">May — Sept 2022</div>
-          <div class="t-title">Primary School Teacher (BPS-14)</div>
-          <div class="t-org">SELD, Government of Sindh — GBPS PTC Shahdadpur</div>
+      <!-- Divider -->
+      <div class="footer-divider"></div>
+
+      <!-- Footer Bottom Row: Copyright + Social Icons -->
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Folioblox. All rights reserved. Crafted with passion.</p>
+
+        <!-- Social Media Icon Buttons -->
+        <div class="footer-socials">
+
+          <!-- Instagram -->
+          <a href="#" class="footer-social-btn" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+
+          <!-- Twitter / X -->
+          <a href="#" class="footer-social-btn" aria-label="Twitter / X" title="Twitter / X">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="#" class="footer-social-btn" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+
+          <!-- Dribbble -->
+          <a href="#" class="footer-social-btn" aria-label="Dribbble" title="Dribbble">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 6.628 5.374 12 12 12 6.627 0 12-5.372 12-12 0-6.627-5.373-12-12-12zm7.974 5.49a10.093 10.093 0 0 1 2.348 5.657c-.344-.066-3.786-.769-7.25-.332-.078-.192-.153-.39-.234-.583-.215-.527-.452-1.049-.694-1.558 3.801-1.548 5.537-3.778 5.83-4.184zM12 2.032a9.986 9.986 0 0 1 6.738 2.598c-.243.362-1.802 2.457-5.47 3.826C11.485 6.086 9.74 4.193 9.474 3.891A10.048 10.048 0 0 1 12 2.032zm-4.99 1.471c.258.297 1.978 2.188 3.768 4.476C6.148 9.163 2.99 9.148 2.65 9.14a10.037 10.037 0 0 1 4.36-5.637zm-4.91 8.49c0-.08.002-.16.004-.24.33.007 4.067.095 8.608-1.193.241.47.469.947.681 1.43-.109.032-.22.064-.33.1-4.693 1.514-7.19 5.65-7.407 6.027a9.956 9.956 0 0 1-1.556-6.124zm7.9 9.008a9.956 9.956 0 0 1-5.934-1.953c.174-.348 2.144-4.15 7.31-5.944.022-.007.044-.015.066-.022A48.74 48.74 0 0 1 13.7 18.88a9.97 9.97 0 0 1-3.7.12zm5.463-1.17a50.12 50.12 0 0 0-1.22-5.585c3.214-.514 6.033.326 6.382.433a10.017 10.017 0 0 1-5.162 5.152z"/>
+            </svg>
+          </a>
+
+          <!-- Behance -->
+          <a href="#" class="footer-social-btn" aria-label="Behance" title="Behance">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.051-2.053-5.051-5.013 0-2.972 1.93-5.02 5.029-5.02 3.093 0 4.925 1.952 5.029 5.093H16.22c.08 1.45 1.02 2.063 2.084 2.063.526 0 1.08-.128 1.37-.5h3.052zM16.13 13.25H20.5c-.014-1.22-.861-1.934-2.124-1.934-1.265 0-2.132.717-2.245 1.934zM3.499 18.063h3.499c.814-.043 1.467-.586 1.467-1.542 0-.903-.508-1.505-1.467-1.515H3.5v3.057zm0-4.617h3.197c.807 0 1.307-.468 1.307-1.384 0-.88-.5-1.327-1.307-1.327H3.5v2.711zM0 21V6h6.803c2.28 0 4.007 1.222 4.007 3.451 0 1.243-.688 2.318-1.717 2.903 1.376.492 2.173 1.73 2.173 3.214C11.266 18.51 9.413 21 6.802 21H0z"/>
+            </svg>
+          </a>
+
         </div>
-        <div class="t-media"><span class="plus">+</span></div>
       </div>
 
-      <div class="t-item">
-        <div>
-          <div class="t-dot"></div>
-          <div class="t-date">Apr 2018 — Feb 2019</div>
-          <div class="t-title">Java &amp; Android Trainer</div>
-          <div class="t-org">GEXTON Inc.</div>
-          <div class="t-detail">Taught basic through advanced levels; built a Torch app, a live-streaming lecture app, and a camera effects app with trainees.</div>
-        </div>
-        <!-- REPLACE: screen recording (mp4) of one of the trainee apps -->
-        <div class="t-media"><span class="plus">▶</span></div>
-      </div>
-
-      <div class="t-item">
-        <div>
-          <div class="t-dot"></div>
-          <div class="t-date">Feb — Mar 2018</div>
-          <div class="t-title">Intern C++ Developer</div>
-          <div class="t-org">E-Access (Pvt) Ltd.</div>
-          <div class="t-detail">Configured Verifone Vx520 &amp; Vx680 payment terminals and worked on the Bank AlFalah EMV application, merging loyalty (redeem, inquiry, void) transactions with ISO 8583 logs.</div>
-        </div>
-        <div class="t-media"><span class="plus">+</span></div>
-      </div>
-
-      <div class="t-item">
-        <div>
-          <div class="t-dot"></div>
-          <div class="t-date">Jun — Jul 2015</div>
-          <div class="t-title">Intern, Java (Basic Level)</div>
-          <div class="t-org">GEXTON Inc.</div>
-          <div class="t-detail">First hands-on exposure to Java EE and MySQL through a series of desktop application tasks.</div>
-        </div>
-        <div class="t-media"><span class="plus">+</span></div>
-      </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ============ SKILLS ============ -->
-<section class="section-ink" id="skills">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="kicker on-ink">Skills</p>
-      <h2>What I still reach for outside the classroom</h2>
-    </div>
-    <div class="skill-groups reveal-stagger">
-      <div class="skill-group">
-        <h3>PROGRAMMING</h3>
-        <div class="chips"><span class="chip">C / C++</span><span class="chip">Java</span><span class="chip">Python</span></div>
-      </div>
-      <div class="skill-group">
-        <h3>WEB &amp; FRAMEWORKS</h3>
-        <div class="chips"><span class="chip">HTML/CSS/JS</span><span class="chip">PHP</span><span class="chip">Bootstrap</span><span class="chip">WordPress</span><span class="chip">Firebase</span><span class="chip">Vuforia (AR)</span></div>
-      </div>
-      <div class="skill-group">
-        <h3>DATA &amp; TOOLS</h3>
-        <div class="chips"><span class="chip">SQL / MySQL</span><span class="chip">XAMPP</span><span class="chip">SQLite</span><span class="chip">MATLAB</span><span class="chip">UML</span><span class="chip">Android Studio</span></div>
-      </div>
-      <div class="skill-group">
-        <h3>DESIGN &amp; OFFICE</h3>
-        <div class="chips"><span class="chip">Photoshop</span><span class="chip">Canva</span><span class="chip">CapCut</span><span class="chip">Camtasia</span><span class="chip">Excel</span><span class="chip">PowerPoint</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+  <script>
+    (function () {
+      const TOTAL_FRAMES = 180;
+      const FRAME_PATH_PREFIX = './ezgif-72843d57ac70b076-png-split/ezgif-frame-';
+      const FRAME_PATH_SUFFIX = '.png';
 
-<!-- ============ PROJECT SPOTLIGHT ============ -->
-<section class="section-paper" id="project">
-  <div class="wrap">
-    <div class="spotlight">
-      <div class="spot-visual reveal">
-        <div class="tag">FINAL YEAR PROJECT · 2017</div>
-        <!--
-          REPLACE: screen recording of the AR app in action at images/project-demo.mp4
-          (autoplay muted loop shown below) — or swap the <video> for an <img> if you'd
-          rather show a screenshot.
-        -->
-        <video autoplay muted loop playsinline poster="images/project-poster.jpg">
-          <source src="images/project-demo.mp4" type="video/mp4">
-        </video>
-        <div class="play"><span></span></div>
-      </div>
-      <div class="reveal">
-        <p class="kicker on-paper" style="color:var(--teal)">Featured project</p>
-        <h2 style="color:var(--text-on-paper)">Smart Advertising using Augmented Reality</h2>
-        <p style="color:var(--text-on-paper-dim)">An Android application that turns any billboard or printed hoarding into a live video ad. Point the camera at a recognised image, and the app detects it in real time and plays the matching advertisement over it — a direct, hands-on view of physical and digital worlds overlapping.</p>
-        <p style="color:var(--text-on-paper-dim)">Built as my final-year thesis at Mehran University using Vuforia for image recognition and Android Studio for the app itself — the same instinct for overlaying structure on top of something real that still shows up in how I plan a lesson.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      const canvas = document.getElementById('animation-canvas');
+      const ctx = canvas.getContext('2d');
+      const loader = document.getElementById('loader');
+      const loaderText = document.getElementById('loader-text');
+      const loaderFill = document.getElementById('loader-fill');
 
-<!-- ============ ACHIEVEMENTS + GALLERY ============ -->
-<section class="section-ink" id="achievements">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="kicker on-ink">Beyond the desk</p>
-      <h2>Certifications, awards &amp; a fair amount of volleyball</h2>
-    </div>
-    <div class="ach-cols reveal">
-      <div>
-        <h3>CERTIFICATIONS</h3>
-        <ul class="ach-list">
-          <li>Android Development (4 months) — Benazir Bhutto Shaheed Youth Development Program, Gexton Education</li>
-          <li>Core &amp; Advanced Java (6 months) — Aptech Computer Education, Hyderabad</li>
-          <li>Microsoft Office Specialist — Word 2016 &amp; PowerPoint 2016 (Dec 2016)</li>
-        </ul>
-      </div>
-      <div>
-        <h3>AWARDS &amp; ACHIEVEMENTS</h3>
-        <ul class="ach-list">
-          <li>Best Ambassador shield, IEEE TechCom '18, ISRA University</li>
-          <li>Prime Minister's Laptop Scheme — best 2nd-year performance, 2015</li>
-          <li>Gold &amp; silver medals in Volleyball, Squash and Cricket, Inter-Division Championships 2008–2013</li>
-          <li>Winning team, 4th All Sindh Inter Public School &amp; Cadet Colleges T20 Cricket Tournament, 2013</li>
-          <li>Captain, Matric Class Volleyball Championship 2011, Cadet College Sanghar</li>
-        </ul>
-      </div>
-    </div>
+      const images = [];
+      let loadedCount = 0;
 
-    <div id="gallery" class="gallery reveal-stagger">
-      <!-- REPLACE each of these 4 with your own certificate/award/classroom photos or short clips -->
-      <figure><img src="images/gallery-1.jpg" alt="Certification"><figcaption>Android Dev certificate</figcaption></figure>
-      <figure><img src="images/gallery-2.jpg" alt="Award"><figcaption>IEEE TechCom '18 shield</figcaption></figure>
-      <figure><img src="images/gallery-3.jpg" alt="Classroom"><figcaption>Classroom, Shahdadpur</figcaption></figure>
-      <figure><img src="images/gallery-4.jpg" alt="Volleyball team"><figcaption>Inter-division volleyball</figcaption></figure>
-    </div>
-  </div>
-</section>
+      let targetFrame = 0;
+      let currentFrame = 0;
 
-<!-- ============ CONTACT ============ -->
-<section class="section-paper" id="contact-section" style="background:var(--ink); padding-bottom:0;">
-  <div class="wrap" id="contact" style="padding-bottom:84px;">
-    <div class="contact-grid reveal">
-      <h2 style="color:var(--text-on-ink)">Let's talk teaching, tech, or both.</h2>
-      <div class="contact-links">
-        <a href="mailto:tanveerrajput0894@gmail.com"><span>Email</span>tanveerrajput0894@gmail.com</a>
-        <a href="tel:+923047582661"><span>Phone / WhatsApp</span>+92 304 7582661</a>
-        <a href="images/Tanveer_Ahmed_CV.pdf" target="_blank" rel="noopener"><span>Resume</span>Download full CV (PDF)</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>© 2026 Tanveer Ahmed Rajput · Sanghar, Sindh, Pakistan</footer>
-
-<script>
-// ---- scroll progress bar ----
-var progress = document.getElementById('progress');
-function updateProgress(){
-  var h = document.documentElement;
-  var scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-  progress.style.width = scrolled + '%';
-}
-document.addEventListener('scroll', updateProgress, {passive:true});
-updateProgress();
-
-// ---- reveal on scroll ----
-var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(!reduced && 'IntersectionObserver' in window){
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        e.target.classList.add('is-visible');
-        io.unobserve(e.target);
+      function getFrameFilename(index) {
+        const paddedIndex = String(index).padStart(3, '0');
+        return `${FRAME_PATH_PREFIX}${paddedIndex}${FRAME_PATH_SUFFIX}`;
       }
-    });
-  }, {threshold:0.18});
-  document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el){ io.observe(el); });
 
-  // timeline fill lines
-  ['fillEdu','fillExp'].forEach(function(id){
-    var el = document.getElementById(id);
-    if(!el) return;
-    var wrap = el.parentElement;
-    var io2 = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          el.style.height = '100%';
-          io2.unobserve(wrap);
+      function resizeCanvas() {
+        const dpr = window.devicePixelRatio || 1;
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+
+        ctx.scale(dpr, dpr);
+        renderCurrentFrame();
+      }
+
+      function drawFrame(img) {
+        if (!img || !img.complete || img.naturalWidth === 0) return;
+
+        const canvasWidth = window.innerWidth;
+        const canvasHeight = window.innerHeight;
+
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        const imgWidth = img.naturalWidth;
+        const imgHeight = img.naturalHeight;
+
+        // Cover fit: fill 100% of the screen background on all devices including large & ultrawide displays
+        const scale = Math.max(canvasWidth / imgWidth, canvasHeight / imgHeight);
+        const drawWidth = imgWidth * scale;
+        const drawHeight = imgHeight * scale;
+
+        const x = (canvasWidth - drawWidth) / 2;
+        // Top-aligned with subtle offset so top subject is fully complete and unclipped
+        const y = (drawHeight > canvasHeight) ? 0 : (canvasHeight - drawHeight) / 2;
+
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        ctx.drawImage(img, x, y, drawWidth, drawHeight);
+      }
+
+      function renderCurrentFrame() {
+        const roundedIndex = Math.round(currentFrame);
+        const clampedIndex = Math.max(0, Math.min(TOTAL_FRAMES - 1, roundedIndex));
+        if (images[clampedIndex]) {
+          drawFrame(images[clampedIndex]);
         }
-      });
-    }, {threshold:0.1});
-    io2.observe(wrap);
-  });
-} else {
-  document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el){ el.classList.add('is-visible'); });
-}
+      }
 
-</script>
+      function updateScrollProgress() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        
+        if (maxScroll <= 0) return;
+
+        const progress = Math.max(0, Math.min(1, scrollTop / maxScroll));
+        targetFrame = progress * (TOTAL_FRAMES - 1);
+      }
+
+      function tick() {
+        const diff = targetFrame - currentFrame;
+        
+        if (Math.abs(diff) > 0.001) {
+          currentFrame += diff * 0.12;
+          renderCurrentFrame();
+        } else if (currentFrame !== targetFrame) {
+          currentFrame = targetFrame;
+          renderCurrentFrame();
+        }
+
+        requestAnimationFrame(tick);
+      }
+
+      function preloadImages() {
+        for (let i = 1; i <= TOTAL_FRAMES; i++) {
+          const img = new Image();
+          const src = getFrameFilename(i);
+
+          img.onload = () => {
+            loadedCount++;
+            const percent = Math.floor((loadedCount / TOTAL_FRAMES) * 100);
+            loaderText.textContent = `Loading ${percent}%`;
+            loaderFill.style.width = `${percent}%`;
+
+            if (i === 1) {
+              drawFrame(img);
+            }
+
+            if (loadedCount === TOTAL_FRAMES) {
+              onAllLoaded();
+            }
+          };
+
+          img.onerror = () => {
+            loadedCount++;
+            if (loadedCount === TOTAL_FRAMES) {
+              onAllLoaded();
+            }
+          };
+
+          img.src = src;
+          images.push(img);
+        }
+      }
+
+      function onAllLoaded() {
+        setTimeout(() => {
+          loader.classList.add('hidden');
+        }, 200);
+
+        updateScrollProgress();
+        tick();
+      }
+
+      window.addEventListener('resize', resizeCanvas);
+      window.addEventListener('orientationchange', resizeCanvas);
+      window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+      resizeCanvas();
+      preloadImages();
+    })();
+  </script>
 </body>
 </html>
