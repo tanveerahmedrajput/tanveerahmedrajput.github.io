@@ -746,6 +746,9 @@
       .participations-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 768px) {
@@ -761,12 +764,392 @@
       .participations-grid {
         grid-template-columns: 1fr;
       }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
       .trophy-card {
         padding: 30px 24px;
       }
       .cta-card {
         padding: 48px 24px;
       }
+      .lightbox-content {
+        max-width: 95vw;
+      }
+      .lightbox-details {
+        padding: 18px 20px;
+      }
+      .lightbox-details h3 {
+        font-size: 18px;
+      }
+    }
+
+    /* Media Frame & Integrated Visuals */
+    .card-media-frame {
+      position: relative;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #080808;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-media-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+    }
+
+    .card-media-frame:hover img {
+      transform: scale(1.06);
+      filter: brightness(1.08);
+    }
+
+    .trophy-media-frame {
+      height: 190px;
+      margin-bottom: 20px;
+    }
+
+    .sport-media-frame {
+      height: 155px;
+      margin-bottom: 16px;
+    }
+
+    .part-media-frame {
+      height: 155px;
+      margin-bottom: 16px;
+    }
+
+    .media-hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.8) 100%);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+    }
+
+    .card-media-frame:hover .media-hover-overlay {
+      opacity: 1;
+    }
+
+    .view-pill {
+      background: rgba(255, 85, 0, 0.92);
+      color: #ffffff;
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transform: translateY(10px);
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 16px rgba(255, 85, 0, 0.4);
+    }
+
+    .card-media-frame:hover .view-pill {
+      transform: translateY(0);
+    }
+
+    .media-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 3;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #ff8533;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.4px;
+    }
+
+    /* Photo Gallery Section */
+    .gallery-section {
+      margin-bottom: 110px;
+    }
+
+    .gallery-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 34px;
+    }
+
+    .gallery-filter-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.75);
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .gallery-filter-btn:hover {
+      background: rgba(255, 85, 0, 0.15);
+      border-color: rgba(255, 85, 0, 0.4);
+      color: #ff8533;
+    }
+
+    .gallery-filter-btn.active {
+      background: #ff5500;
+      border-color: #ff5500;
+      color: #ffffff;
+      box-shadow: 0 4px 16px rgba(255, 85, 0, 0.35);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .gallery-card {
+      background: rgba(12, 10, 10, 0.45);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 85, 0, 0.45);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+    }
+
+    .gallery-card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: #080808;
+    }
+
+    .gallery-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-card:hover .gallery-card-img-wrap img {
+      transform: scale(1.08);
+    }
+
+    .gallery-card-info {
+      padding: 20px 22px 24px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex-grow: 1;
+    }
+
+    .gallery-card-cat {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: #ff5500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .gallery-card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+
+    .gallery-card-caption {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.93);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 10;
+      max-width: 960px;
+      width: 100%;
+      background: rgba(18, 14, 14, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.9);
+      animation: zoomIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 20;
+    }
+
+    .lightbox-close:hover {
+      background: #ff5500;
+      border-color: #ff5500;
+      transform: rotate(90deg);
+    }
+
+    .lightbox-media-wrap {
+      width: 100%;
+      max-height: 560px;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .lightbox-media-wrap img {
+      max-width: 100%;
+      max-height: 560px;
+      width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-details {
+      padding: 24px 30px 28px 30px;
+      background: rgba(14, 12, 12, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .lightbox-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .lightbox-pill {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: #ff5500;
+      background: rgba(255, 85, 0, 0.12);
+      border: 1px solid rgba(255, 85, 0, 0.3);
+      padding: 3px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    .lightbox-subtag {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .lightbox-details h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .lightbox-details p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .lightbox-nav-btn {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 15;
+    }
+
+    .lightbox-nav-btn:hover {
+      background: #ff5500;
+      border-color: #ff5500;
+    }
+
+    .lightbox-nav-btn.prev {
+      left: 16px;
+    }
+
+    .lightbox-nav-btn.next {
+      right: 16px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
@@ -846,6 +1229,13 @@
           <!-- Honor 1 -->
           <div class="trophy-card">
             <div>
+              <div class="card-media-frame trophy-media-frame" data-lightbox data-img-src="images/sports-volleyball-captain.jpg" data-title="Matric Class Volleyball Championship — Captain & Champion" data-desc="Cadet College Sanghar (2011) — Undefeated tournament champion squad captained by Tanveer Ahmed Rajput." data-category="Championship Trophy" data-tag="CCS Volleyball Captain">
+                <img src="images/sports-volleyball-captain.jpg" alt="Volleyball Championship Spike" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">Team Captain</span>
+              </div>
               <div class="trophy-top">
                 <div class="trophy-icon-wrap">🏐</div>
                 <span class="trophy-year">2011</span>
@@ -866,6 +1256,13 @@
           <!-- Honor 2 -->
           <div class="trophy-card">
             <div>
+              <div class="card-media-frame trophy-media-frame" data-lightbox data-img-src="images/sports-cricket-t20.jpg" data-title="4th All Sindh Inter Public School & Cadet Colleges T20 Tournament" data-desc="Cadet College Sanghar cricket squad championship victory against top military and public institutions across Sindh." data-category="Championship Trophy" data-tag="All Sindh T20 Champion">
+                <img src="images/sports-cricket-t20.jpg" alt="All Sindh T20 Cricket Championship" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">T20 Champions</span>
+              </div>
               <div class="trophy-top">
                 <div class="trophy-icon-wrap">🏏</div>
                 <span class="trophy-year">2013</span>
@@ -886,6 +1283,13 @@
           <!-- Honor 3 -->
           <div class="trophy-card">
             <div>
+              <div class="card-media-frame trophy-media-frame" data-lightbox data-img-src="images/sports-medals-podium.jpg" data-title="Inter-Division Sports Championships — Multi-Medalist" data-desc="Regional Divisional Sports Championships, Sindh (2008–2013) — Multiple Gold & Silver medals in Volleyball, Cricket, and Squash." data-category="Medal Record" data-tag="Multi-Sport Medalist">
+                <img src="images/sports-medals-podium.jpg" alt="Inter-Division Sports Medals" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">Gold &amp; Silver</span>
+              </div>
               <div class="trophy-top">
                 <div class="trophy-icon-wrap">🥇</div>
                 <span class="trophy-year">2008 — 2013</span>
@@ -910,6 +1314,13 @@
           <!-- Honor 4 -->
           <div class="trophy-card">
             <div>
+              <div class="card-media-frame trophy-media-frame" data-lightbox data-img-src="images/sports-muet-volleyball.jpg" data-title="MUET Jamshoro University Volleyball Varsity Squad" data-desc="Mehran University of Engineering and Technology (2013–2017) — Varsity player representing MUET in inter-university championships." data-category="Varsity Athletics" data-tag="MUET Varsity">
+                <img src="images/sports-muet-volleyball.jpg" alt="MUET Jamshoro Volleyball Varsity" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">Varsity Squad</span>
+              </div>
               <div class="trophy-top">
                 <div class="trophy-icon-wrap">🎓</div>
                 <span class="trophy-year">2013 — 2017</span>
@@ -941,6 +1352,13 @@
 
           <div class="sport-box">
             <div>
+              <div class="card-media-frame sport-media-frame" data-lightbox data-img-src="images/sports-discipline-volleyball.jpg" data-title="Volleyball Discipline & Tactics" data-desc="Captaincy level setting, explosive high jump spikes, aggressive boundary serves, and agile floor defense." data-category="Sports Discipline" data-tag="Volleyball">
+                <img src="images/sports-discipline-volleyball.jpg" alt="Volleyball Court & Ball" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">Volleyball</span>
+              </div>
               <span class="sport-icon">🏐</span>
               <h3 class="sport-name">Volleyball</h3>
               <p class="sport-desc">Primary sport played at captaincy and university varsity levels. Specialized in tactical court leadership, high jump spikes, aggressive serving, and quick blocking setups.</p>
@@ -953,6 +1371,13 @@
 
           <div class="sport-box">
             <div>
+              <div class="card-media-frame sport-media-frame" data-lightbox data-img-src="images/sports-discipline-cricket.jpg" data-title="Cricket Match & Batting Mastery" data-desc="5-year continuous regular for Cadet College Sanghar. Middle-order stroke play, running between wickets, and agile fielding." data-category="Sports Discipline" data-tag="Cricket">
+                <img src="images/sports-discipline-cricket.jpg" alt="Cricket Match Action" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">Cricket</span>
+              </div>
               <span class="sport-icon">🏏</span>
               <h3 class="sport-name">Cricket</h3>
               <p class="sport-desc">Regular member of the Cadet College Sanghar team for 5 continuous years (2008–2013). Winner of the All Sindh Inter Public School T20 Tournament and divisional gold medalist.</p>
@@ -965,6 +1390,13 @@
 
           <div class="sport-box">
             <div>
+              <div class="card-media-frame sport-media-frame" data-lightbox data-img-src="images/sports-discipline-squash.jpg" data-title="Squash Court Agility & Precision" data-desc="Silver medalist in Inter-Division Sports Championships. High cardiovascular stamina and rapid tactical ball placement." data-category="Sports Discipline" data-tag="Squash">
+                <img src="images/sports-discipline-squash.jpg" alt="Squash Court & Racquet" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">Squash</span>
+              </div>
               <span class="sport-icon">🎾</span>
               <h3 class="sport-name">Squash</h3>
               <p class="sport-desc">Silver medalist in Inter-Division Sports Championships. Cultivated explosive lateral agility, cardiovascular endurance, and rapid tactical racquet placement inside the glass court.</p>
@@ -977,6 +1409,13 @@
 
           <div class="sport-box">
             <div>
+              <div class="card-media-frame sport-media-frame" data-lightbox data-img-src="images/sports-discipline-badminton.jpg" data-title="Badminton & Table Tennis Precision" data-desc="Lightning-fast hand-eye coordination, quick wrist snaps, deceptive drop shots, and spin manipulation." data-category="Sports Discipline" data-tag="Badminton & TT">
+                <img src="images/sports-discipline-badminton.jpg" alt="Badminton Shuttlecock & Racket" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">Badminton &amp; TT</span>
+              </div>
               <span class="sport-icon">🏸</span>
               <h3 class="sport-name">Badminton &amp; TT</h3>
               <p class="sport-desc">Active recreational and competitive competitor in Badminton and Table Tennis, sharpening lightning-fast hand-eye coordination and tactical spin manipulation.</p>
@@ -1013,21 +1452,160 @@
         <div class="participations-grid">
 
           <div class="part-card">
+            <div class="card-media-frame part-media-frame" data-lightbox data-img-src="images/sports-gala-larkana.jpg" data-title="Inter Cadet Colleges Sports Championship" data-desc="Cadet College Larkana (2013) — Official sports contingent representing Cadet College Sanghar across provincial cadet tournaments." data-category="Tournament Contingent" data-tag="Larkana 2013">
+              <img src="images/sports-gala-larkana.jpg" alt="Inter Cadet Colleges Sports Championship" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 View Photo</span>
+              </div>
+              <span class="media-tag">Cadet Larkana</span>
+            </div>
             <span class="part-badge">Cadet College Larkana (2013)</span>
             <h3 class="part-title">Inter Cadet Colleges Sports Championship</h3>
             <p class="part-desc">Selected as part of the official sports contingent representing Cadet College Sanghar at the Inter Cadet Colleges Sports Championship in Larkana.</p>
           </div>
 
           <div class="part-card">
+            <div class="card-media-frame part-media-frame" data-lightbox data-img-src="images/sports-gala-karachi.jpg" data-title="All Pakistan Sports Gala (Cricket)" data-desc="KN Academy, Karachi (2012) — National youth cricket tournament competing against premier academic institutions across Pakistan." data-category="National Tournament" data-tag="KN Academy Karachi">
+              <img src="images/sports-gala-karachi.jpg" alt="All Pakistan Sports Gala Cricket Stadium" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 View Photo</span>
+              </div>
+              <span class="media-tag">Karachi Gala</span>
+            </div>
             <span class="part-badge">KN Academy, Karachi (2012)</span>
             <h3 class="part-title">All Pakistan Sports Gala (Cricket)</h3>
             <p class="part-desc">Participated in the premier national youth sports gala in Karachi, playing against top school and college cricket squads from across Pakistan.</p>
           </div>
 
           <div class="part-card">
+            <div class="card-media-frame part-media-frame" data-lightbox data-img-src="images/sports-seminar-health.jpg" data-title="Youth Health & Sports Awareness Seminar" data-desc="Sindh Sports & Youth Affairs + UNFPA — Specialized athletic conditioning, career counselling, and youth health awareness." data-category="Athletic Health Seminar" data-tag="UNFPA / Sindh Sports">
+              <img src="images/sports-seminar-health.jpg" alt="Youth Sports Health Seminar" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 View Photo</span>
+              </div>
+              <span class="media-tag">Health Seminar</span>
+            </div>
             <span class="part-badge">Sindh Sports &amp; Youth Affairs + UNFPA</span>
             <h3 class="part-title">Youth Health &amp; Sports Awareness Seminar</h3>
             <p class="part-desc">Participated in the specialized seminar on "Professional Career Counselling &amp; Health Awareness for Youth" organized at Cadet College Sanghar.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Dedicated Athletic Moments & Action Gallery Section -->
+      <section class="gallery-section">
+        <div class="section-header-block">
+          <span class="eyebrow-orange">ATHLETIC MOMENTS &amp; ARCHIVE</span>
+          <h2 class="section-headline">Sports Action &amp; <span class="serif-italic">Tournament Gallery</span></h2>
+          <p style="color: rgba(255, 255, 255, 0.65); font-size: 15px; margin-top: 10px; max-width: 720px;">
+            High-definition visual record celebrating undefeated volleyball captaincy, All-Sindh T20 cricket trophies, varsity athletics at MUET, and inter-division medal honors. Click any photo to view in full resolution.
+          </p>
+        </div>
+
+        <div class="gallery-filter-bar">
+          <button class="gallery-filter-btn active" onclick="filterGallery('all', this)">All Moments (6)</button>
+          <button class="gallery-filter-btn" onclick="filterGallery('volleyball', this)">Volleyball Captaincy</button>
+          <button class="gallery-filter-btn" onclick="filterGallery('cricket', this)">Cricket Champions</button>
+          <button class="gallery-filter-btn" onclick="filterGallery('honors', this)">Medals &amp; Galas</button>
+        </div>
+
+        <div class="gallery-grid">
+
+          <!-- Sports Gallery Item 1 -->
+          <div class="gallery-card" data-gallery-cat="volleyball" data-lightbox data-img-src="images/sports-volleyball-captain.jpg" data-title="Volleyball Championship Spike" data-desc="Cadet College Sanghar — Matric Class squad captaincy leading to undefeated championship title in 2011." data-category="Volleyball" data-tag="CCS Champions">
+            <div class="gallery-card-img-wrap">
+              <img src="images/sports-volleyball-captain.jpg" alt="Volleyball Championship Match Spike" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 Full View</span>
+              </div>
+              <span class="media-tag">Captain &amp; Champion</span>
+            </div>
+            <div class="gallery-card-info">
+              <span class="gallery-card-cat">Volleyball Captaincy</span>
+              <h3 class="gallery-card-title">Matric Class Volleyball Title</h3>
+              <p class="gallery-card-caption">Captained the Cadet College Sanghar squad to undefeated victory in the annual championship finals.</p>
+            </div>
+          </div>
+
+          <!-- Sports Gallery Item 2 -->
+          <div class="gallery-card" data-gallery-cat="cricket" data-lightbox data-img-src="images/sports-cricket-t20.jpg" data-title="All Sindh T20 Cricket Champions" data-desc="Public School Hyderabad — Championship winning contingent of Cadet College Sanghar in 2013." data-category="Cricket" data-tag="T20 Champions">
+            <div class="gallery-card-img-wrap">
+              <img src="images/sports-cricket-t20.jpg" alt="All Sindh T20 Cricket Match" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 Full View</span>
+              </div>
+              <span class="media-tag">All Sindh Champions</span>
+            </div>
+            <div class="gallery-card-info">
+              <span class="gallery-card-cat">Inter-Collegiate Cricket</span>
+              <h3 class="gallery-card-title">4th All Sindh T20 Tournament</h3>
+              <p class="gallery-card-caption">Defeated top cadet and public institutions to lift the 2013 provincial Twenty20 trophy.</p>
+            </div>
+          </div>
+
+          <!-- Sports Gallery Item 3 -->
+          <div class="gallery-card" data-gallery-cat="volleyball" data-lightbox data-img-src="images/sports-muet-volleyball.jpg" data-title="MUET Varsity Volleyball Team" data-desc="Mehran University of Engineering and Technology — Inter-university varsity athletics representation from 2013 to 2017." data-category="Volleyball" data-tag="MUET Varsity">
+            <div class="gallery-card-img-wrap">
+              <img src="images/sports-muet-volleyball.jpg" alt="MUET Volleyball Varsity Team Match" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 Full View</span>
+              </div>
+              <span class="media-tag">MUET Varsity</span>
+            </div>
+            <div class="gallery-card-info">
+              <span class="gallery-card-cat">University Athletics</span>
+              <h3 class="gallery-card-title">MUET University Volleyball</h3>
+              <p class="gallery-card-caption">Regular varsity starter competing across Sindh inter-university and department championships.</p>
+            </div>
+          </div>
+
+          <!-- Sports Gallery Item 4 -->
+          <div class="gallery-card" data-gallery-cat="honors" data-lightbox data-img-src="images/sports-medals-podium.jpg" data-title="Inter-Division Championship Medals" data-desc="Podium medals across 5 years: Gold in Volleyball & Cricket, Silver in Volleyball, Cricket, and Squash." data-category="Honors" data-tag="Gold & Silver Medals">
+            <div class="gallery-card-img-wrap">
+              <img src="images/sports-medals-podium.jpg" alt="Championship Medals Collection" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 Full View</span>
+              </div>
+              <span class="media-tag">Multi-Sport Medals</span>
+            </div>
+            <div class="gallery-card-info">
+              <span class="gallery-card-cat">Divisional Championships</span>
+              <h3 class="gallery-card-title">Provincial Medal Honors</h3>
+              <p class="gallery-card-caption">Multiple gold and silver medals won across regional volleyball, cricket, and squash tournaments.</p>
+            </div>
+          </div>
+
+          <!-- Sports Gallery Item 5 -->
+          <div class="gallery-card" data-gallery-cat="honors" data-lightbox data-img-src="images/sports-gala-larkana.jpg" data-title="Inter Cadet Colleges Sports Gala" data-desc="Cadet College Larkana — Regional cadet athletics tournament contingent representing Cadet College Sanghar." data-category="Honors" data-tag="Cadet Larkana">
+            <div class="gallery-card-img-wrap">
+              <img src="images/sports-gala-larkana.jpg" alt="Cadet Colleges Athletic Tournament" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 Full View</span>
+              </div>
+              <span class="media-tag">Cadet Gala</span>
+            </div>
+            <div class="gallery-card-info">
+              <span class="gallery-card-cat">Military Cadet Gala</span>
+              <h3 class="gallery-card-title">Inter-Cadet Championship</h3>
+              <p class="gallery-card-caption">Selected for the elite sports delegation representing Sanghar against military cadet colleges.</p>
+            </div>
+          </div>
+
+          <!-- Sports Gallery Item 6 -->
+          <div class="gallery-card" data-gallery-cat="cricket" data-lightbox data-img-src="images/sports-gala-karachi.jpg" data-title="All Pakistan Sports Gala Karachi" data-desc="KN Academy, Karachi — National youth cricket tournament with premier academic institutions across the country." data-category="Cricket" data-tag="All Pakistan Gala">
+            <div class="gallery-card-img-wrap">
+              <img src="images/sports-gala-karachi.jpg" alt="All Pakistan Sports Gala Karachi" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 Full View</span>
+              </div>
+              <span class="media-tag">National Gala</span>
+            </div>
+            <div class="gallery-card-info">
+              <span class="gallery-card-cat">National Gala</span>
+              <h3 class="gallery-card-title">All Pakistan Youth Cricket Gala</h3>
+              <p class="gallery-card-caption">Competitive national fixture facing top collegiate cricket squads at KN Academy in Karachi.</p>
+            </div>
           </div>
 
         </div>
@@ -1116,6 +1694,27 @@
     </div>
   </footer>
 
+  <!-- Full-screen Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog">
+    <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close photo preview">✕</button>
+      <div class="lightbox-media-wrap">
+        <img id="lightbox-img" src="" alt="" />
+      </div>
+      <div class="lightbox-details">
+        <div class="lightbox-meta">
+          <span id="lightbox-category" class="lightbox-pill">Category</span>
+          <span id="lightbox-tag" class="lightbox-subtag">Credential</span>
+        </div>
+        <h3 id="lightbox-title">Photo Title</h3>
+        <p id="lightbox-desc">Detailed description</p>
+      </div>
+      <button class="lightbox-nav-btn prev" onclick="prevLightbox(event)" aria-label="Previous photo">‹</button>
+      <button class="lightbox-nav-btn next" onclick="nextLightbox(event)" aria-label="Next photo">›</button>
+    </div>
+  </div>
+
   <script>
     // Mobile Menu Toggle
     const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -1132,6 +1731,105 @@
         });
       });
     }
+
+    // Lightbox & Gallery System
+    let galleryItems = [];
+    let currentLightboxIndex = 0;
+
+    function initLightbox() {
+      galleryItems = [];
+      const elements = document.querySelectorAll('[data-lightbox]');
+      elements.forEach((el, index) => {
+        el.setAttribute('data-lightbox-index', index);
+        galleryItems.push({
+          src: el.getAttribute('data-img-src') || el.querySelector('img')?.src,
+          title: el.getAttribute('data-title') || '',
+          desc: el.getAttribute('data-desc') || '',
+          category: el.getAttribute('data-category') || 'Athletic Archive',
+          tag: el.getAttribute('data-tag') || ''
+        });
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          openLightboxByIndex(index);
+        });
+      });
+    }
+
+    function openLightbox(src, title, desc, category, tag) {
+      const modal = document.getElementById('lightbox-modal');
+      const imgEl = document.getElementById('lightbox-img');
+      const titleEl = document.getElementById('lightbox-title');
+      const descEl = document.getElementById('lightbox-desc');
+      const catEl = document.getElementById('lightbox-category');
+      const tagEl = document.getElementById('lightbox-tag');
+
+      if (!modal || !imgEl) return;
+
+      imgEl.src = src;
+      imgEl.alt = title || 'Preview';
+      if (titleEl) titleEl.textContent = title || '';
+      if (descEl) descEl.textContent = desc || '';
+      if (catEl) catEl.textContent = category || 'Sports & Athletics';
+      if (tagEl) tagEl.textContent = tag || '';
+
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function openLightboxByIndex(index) {
+      if (index < 0 || index >= galleryItems.length) return;
+      currentLightboxIndex = index;
+      const item = galleryItems[index];
+      openLightbox(item.src, item.title, item.desc, item.category, item.tag);
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      if (modal) {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+      document.body.style.overflow = '';
+    }
+
+    function prevLightbox(e) {
+      if (e) e.stopPropagation();
+      if (galleryItems.length === 0) return;
+      currentLightboxIndex = (currentLightboxIndex - 1 + galleryItems.length) % galleryItems.length;
+      openLightboxByIndex(currentLightboxIndex);
+    }
+
+    function nextLightbox(e) {
+      if (e) e.stopPropagation();
+      if (galleryItems.length === 0) return;
+      currentLightboxIndex = (currentLightboxIndex + 1) % galleryItems.length;
+      openLightboxByIndex(currentLightboxIndex);
+    }
+
+    // Keyboard controls
+    document.addEventListener('keydown', function(e) {
+      const modal = document.getElementById('lightbox-modal');
+      if (!modal || !modal.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevLightbox();
+      if (e.key === 'ArrowRight') nextLightbox();
+    });
+
+    // Gallery Filter functionality
+    function filterGallery(cat, btn) {
+      document.querySelectorAll('.gallery-filter-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      document.querySelectorAll('.gallery-card').forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-gallery-cat') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', initLightbox);
   </script>
 </body>
 </html>

@@ -308,8 +308,8 @@
       padding: 40px 44px;
       transition: border-color 0.3s ease, transform 0.3s ease;
       display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 40px;
+      grid-template-columns: 280px 1fr;
+      gap: 36px;
       align-items: flex-start;
       position: relative;
       overflow: hidden;
@@ -722,6 +722,10 @@
       .civic-grid {
         grid-template-columns: 1fr;
       }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 768px) {
@@ -737,9 +741,388 @@
         padding: 30px 24px;
       }
 
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
       .cta-card {
         padding: 48px 24px;
       }
+
+      .lightbox-content {
+        max-width: 95vw;
+      }
+
+      .lightbox-details {
+        padding: 18px 20px;
+      }
+
+      .lightbox-details h3 {
+        font-size: 18px;
+      }
+    }
+
+    /* Media Frame & Integrated Visuals */
+    .card-media-frame {
+      position: relative;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #080808;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-media-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+    }
+
+    .card-media-frame:hover img {
+      transform: scale(1.06);
+      filter: brightness(1.08);
+    }
+
+    .exp-media-frame {
+      height: 175px;
+      margin-bottom: 14px;
+    }
+
+    .civic-media-frame {
+      height: 160px;
+      margin-bottom: 16px;
+    }
+
+    .media-hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.8) 100%);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+    }
+
+    .card-media-frame:hover .media-hover-overlay {
+      opacity: 1;
+    }
+
+    .view-pill {
+      background: rgba(255, 85, 0, 0.92);
+      color: #ffffff;
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transform: translateY(10px);
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 16px rgba(255, 85, 0, 0.4);
+    }
+
+    .card-media-frame:hover .view-pill {
+      transform: translateY(0);
+    }
+
+    .media-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 3;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #ff8533;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.4px;
+    }
+
+    /* Photo Gallery Section */
+    .gallery-section {
+      margin-bottom: 110px;
+    }
+
+    .gallery-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 34px;
+    }
+
+    .gallery-filter-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.75);
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .gallery-filter-btn:hover {
+      background: rgba(255, 85, 0, 0.15);
+      border-color: rgba(255, 85, 0, 0.4);
+      color: #ff8533;
+    }
+
+    .gallery-filter-btn.active {
+      background: #ff5500;
+      border-color: #ff5500;
+      color: #ffffff;
+      box-shadow: 0 4px 16px rgba(255, 85, 0, 0.35);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .gallery-card {
+      background: rgba(12, 10, 10, 0.45);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 85, 0, 0.45);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+    }
+
+    .gallery-card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: #080808;
+    }
+
+    .gallery-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-card:hover .gallery-card-img-wrap img {
+      transform: scale(1.08);
+    }
+
+    .gallery-card-info {
+      padding: 20px 22px 24px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex-grow: 1;
+    }
+
+    .gallery-card-cat {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: #ff5500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .gallery-card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+
+    .gallery-card-caption {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.93);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 10;
+      max-width: 960px;
+      width: 100%;
+      background: rgba(18, 14, 14, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.9);
+      animation: zoomIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 20;
+    }
+
+    .lightbox-close:hover {
+      background: #ff5500;
+      border-color: #ff5500;
+      transform: rotate(90deg);
+    }
+
+    .lightbox-media-wrap {
+      width: 100%;
+      max-height: 560px;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .lightbox-media-wrap img {
+      max-width: 100%;
+      max-height: 560px;
+      width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-details {
+      padding: 24px 30px 28px 30px;
+      background: rgba(14, 12, 12, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .lightbox-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .lightbox-pill {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: #ff5500;
+      background: rgba(255, 85, 0, 0.12);
+      border: 1px solid rgba(255, 85, 0, 0.3);
+      padding: 3px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    .lightbox-subtag {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .lightbox-details h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .lightbox-details p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .lightbox-nav-btn {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 15;
+    }
+
+    .lightbox-nav-btn:hover {
+      background: #ff5500;
+      border-color: #ff5500;
+    }
+
+    .lightbox-nav-btn.prev {
+      left: 16px;
+    }
+
+    .lightbox-nav-btn.next {
+      right: 16px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
@@ -822,6 +1205,13 @@
           <!-- Role 1: JEST -->
           <div class="exp-card active-role">
             <div class="exp-meta">
+              <div class="card-media-frame exp-media-frame" data-lightbox data-img-src="images/project-poster.jpg" data-title="Junior Elementary School Teacher (JEST, BPS-14)" data-desc="Tanveer Ahmed Rajput conducting hands-on science instruction with microscope for government school students in Sindh." data-category="Government Teaching" data-tag="SELD Sindh">
+                <img src="images/project-poster.jpg" alt="Tanveer Ahmed Rajput Teaching Science with Microscope" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">Authentic Photo</span>
+              </div>
               <span class="exp-date">Sept 2022 — Present</span>
               <span class="exp-badge current">Current Position</span>
               <span class="exp-location">Shahdadpur, Sindh</span>
@@ -858,6 +1248,13 @@
           <!-- Role 2: PST -->
           <div class="exp-card">
             <div class="exp-meta">
+              <div class="card-media-frame exp-media-frame" data-lightbox data-img-src="images/exp-alsuffah-school.jpg" data-title="Primary School Teacher (PST, BPS-14)" data-desc="SELD Sindh — Early childhood foundational literacy, arithmetic instruction, and student attendance engagement." data-category="Government Teaching" data-tag="GBPS PTC Shahdadpur">
+                <img src="images/exp-alsuffah-school.jpg" alt="Primary School Education" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">PST Service</span>
+              </div>
               <span class="exp-date">May 2022 — Sept 2022</span>
               <span class="exp-badge">SELD Sindh</span>
               <span class="exp-location">Shahdadpur, Sindh</span>
@@ -887,6 +1284,13 @@
           <!-- Role 3: Digital Dreams -->
           <div class="exp-card">
             <div class="exp-meta">
+              <div class="card-media-frame exp-media-frame" data-lightbox data-img-src="images/exp-stem-mentorship.jpg" data-title="Computer Teacher & IT Instructor" data-desc="Digital Dreams Computer Academy — Practical office computing, digital tools, and internet research training for youth." data-category="IT Instruction" data-tag="Digital Dreams">
+                <img src="images/exp-stem-mentorship.jpg" alt="Computer Teacher IT Training" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">IT Academy</span>
+              </div>
               <span class="exp-date">Part-Time / Visiting</span>
               <span class="exp-badge">IT Academy</span>
               <span class="exp-location">Hyderabad / Sindh</span>
@@ -921,6 +1325,13 @@
         <div class="civic-grid">
 
           <div class="civic-card">
+            <div class="card-media-frame civic-media-frame" data-lightbox data-img-src="images/exp-census-enumeration.jpg" data-title="7th & 1st Digital Population Census Enumerator" data-desc="Pakistan Bureau of Statistics — Official field enumeration using dedicated digital tablets for citizen verification." data-category="Civic Assignment" data-tag="National Census 2023">
+              <img src="images/exp-census-enumeration.jpg" alt="Digital Population Census Enumerator" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 View Photo</span>
+              </div>
+              <span class="media-tag">Digital Census</span>
+            </div>
             <span class="civic-badge">National Census 2023</span>
             <h3 class="civic-title">Enumerator in Pakistan’s 7th &amp; 1st Digital Census</h3>
             <p class="civic-desc">Selected by government authorities to perform field enumeration using official digital
@@ -928,6 +1339,13 @@
           </div>
 
           <div class="civic-card">
+            <div class="card-media-frame civic-media-frame" data-lightbox data-img-src="images/exp-elections-officer.jpg" data-title="Election Duty — General Elections 2024" data-desc="Election Commission of Pakistan (ECP) — Polling officer duty ensuring orderly voter verification and ballot transparency." data-category="Civic Assignment" data-tag="ECP General Elections">
+              <img src="images/exp-elections-officer.jpg" alt="Election Duty General Elections" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 View Photo</span>
+              </div>
+              <span class="media-tag">Election Duty</span>
+            </div>
             <span class="civic-badge">Election Commission of Pakistan</span>
             <h3 class="civic-title">Election Duty — General Elections 2024</h3>
             <p class="civic-desc">Deputed for critical election day polling duty on February 8, 2024, ensuring orderly
@@ -935,6 +1353,13 @@
           </div>
 
           <div class="civic-card">
+            <div class="card-media-frame civic-media-frame" data-lightbox data-img-src="images/edu-bed-pedagogy.jpg" data-title="School Census Enumerator (November 2025)" data-desc="SELD Sindh — Comprehensive institutional documentation of school infrastructure, student enrollment, and teacher deployment." data-category="Civic Assignment" data-tag="SELD Survey 2025">
+              <img src="images/edu-bed-pedagogy.jpg" alt="School Census Enumerator" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 View Photo</span>
+              </div>
+              <span class="media-tag">School Census</span>
+            </div>
             <span class="civic-badge">SELD Institutional Survey</span>
             <h3 class="civic-title">School Census Enumerator (Nov 2025)</h3>
             <p class="civic-desc">Conducted comprehensive on-site institutional documentation of student enrollment
@@ -956,6 +1381,13 @@
           <!-- Industry Role 1 -->
           <div class="exp-card">
             <div class="exp-meta">
+              <div class="card-media-frame exp-media-frame" data-lightbox data-img-src="images/gallery-3.jpg" data-title="Java & Android Technical Trainer" data-desc="Tanveer Ahmed Rajput delivering technical software training and code architecture at GEXTON Inc." data-category="Software Industry" data-tag="GEXTON Inc.">
+                <img src="images/gallery-3.jpg" alt="Tanveer Ahmed Rajput Training Software Developers" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">Authentic Photo</span>
+              </div>
               <span class="exp-date">Apr 2018 — Feb 2019</span>
               <span class="exp-badge">Corporate Trainer</span>
               <span class="exp-location">GEXTON Inc.</span>
@@ -991,6 +1423,13 @@
           <!-- Industry Role 2 -->
           <div class="exp-card">
             <div class="exp-meta">
+              <div class="card-media-frame exp-media-frame" data-lightbox data-img-src="images/exp-cpp-developer.jpg" data-title="Internee C++ Developer — E-Access" data-desc="Embedded banking payment POS terminal development, Verifone Vx520/Vx680, and ISO8583 financial protocol parsing." data-category="Software Industry" data-tag="FinTech C++">
+                <img src="images/exp-cpp-developer.jpg" alt="C++ Software Development Workstation" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">E-Access FinTech</span>
+              </div>
               <span class="exp-date">Feb 2018 — Mar 2018</span>
               <span class="exp-badge">C++ Developer</span>
               <span class="exp-location">E-Access (PVT) Ltd.</span>
@@ -1025,6 +1464,13 @@
           <!-- Industry Role 3 -->
           <div class="exp-card">
             <div class="exp-meta">
+              <div class="card-media-frame exp-media-frame" data-lightbox data-img-src="images/edu-cert-java.jpg" data-title="Software Engineering Intern — Gexton" data-desc="Desktop software development with Java SE/EE components, object-oriented design, and MySQL database management." data-category="Software Industry" data-tag="GEXTON Inc.">
+                <img src="images/edu-cert-java.jpg" alt="Java Software Development Internship" loading="lazy" />
+                <div class="media-hover-overlay">
+                  <span class="view-pill">🔍 View Photo</span>
+                </div>
+                <span class="media-tag">Java SE / MySQL</span>
+              </div>
               <span class="exp-date">June 2015 — July 2015</span>
               <span class="exp-badge">Software Intern</span>
               <span class="exp-location">GEXTON Inc.</span>
@@ -1044,6 +1490,124 @@
                 <span class="tag-sm">Database Connectivity</span>
                 <span class="tag-sm">Desktop Software</span>
               </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Dedicated Fieldwork & Professional Moments Photo Gallery -->
+      <section class="gallery-section">
+        <div class="section-header-block">
+          <span class="eyebrow-orange">PROFESSIONAL DOCUMENTATION</span>
+          <h2 class="section-headline">Fieldwork &amp; Classroom <span class="serif-italic">Moments</span></h2>
+          <p style="color: rgba(255, 255, 255, 0.65); font-size: 15px; margin-top: 10px; max-width: 720px;">
+            Authentic photographs and high-definition visual records capturing Sindh public school science education, software engineering lectures, civic deployments, and STEM mentoring. Click any photo to enlarge.
+          </p>
+        </div>
+
+        <div class="gallery-filter-bar">
+          <button class="gallery-filter-btn active" onclick="filterGallery('all', this)">All Moments (6)</button>
+          <button class="gallery-filter-btn" onclick="filterGallery('teaching', this)">Public School Teaching</button>
+          <button class="gallery-filter-btn" onclick="filterGallery('tech', this)">IT &amp; Training</button>
+          <button class="gallery-filter-btn" onclick="filterGallery('civic', this)">Civic &amp; Fieldwork</button>
+        </div>
+
+        <div class="gallery-grid">
+
+          <!-- Moments Card 1: JEST Microscope Teaching (Authentic) -->
+          <div class="gallery-card" data-gallery-cat="teaching" data-lightbox data-img-src="images/project-poster.jpg" data-title="Public School Science Demonstration" data-desc="Tanveer Ahmed Rajput introducing rural students to biological specimens using an optical microscope in Sindh." data-category="Public Education" data-tag="SELD Sindh">
+            <div class="gallery-card-img-wrap">
+              <img src="images/project-poster.jpg" alt="Classroom Science Teaching with Microscope" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 Full View</span>
+              </div>
+              <span class="media-tag">Authentic Photo</span>
+            </div>
+            <div class="gallery-card-info">
+              <span class="gallery-card-cat">SELD Sindh Service</span>
+              <h3 class="gallery-card-title">Microscope Science Class</h3>
+              <p class="gallery-card-caption">Hands-on STEM demonstration empowering students with empirical curiosity and structured observation.</p>
+            </div>
+          </div>
+
+          <!-- Moments Card 2: Tech Training Classroom (Authentic) -->
+          <div class="gallery-card" data-gallery-cat="tech" data-lightbox data-img-src="images/gallery-3.jpg" data-title="Technical Software Mentorship" data-desc="Tanveer Ahmed Rajput instructing developers in Android and Java software architecture at GEXTON Inc." data-category="Tech Instruction" data-tag="GEXTON Inc.">
+            <div class="gallery-card-img-wrap">
+              <img src="images/gallery-3.jpg" alt="Tanveer Teaching Coding Class" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 Full View</span>
+              </div>
+              <span class="media-tag">Authentic Photo</span>
+            </div>
+            <div class="gallery-card-info">
+              <span class="gallery-card-cat">Corporate IT Trainer</span>
+              <h3 class="gallery-card-title">Java &amp; Mobile App Training</h3>
+              <p class="gallery-card-caption">Leading technical cohorts through native Android APIs, XML interface design, and SQLite backend logic.</p>
+            </div>
+          </div>
+
+          <!-- Moments Card 3: IEEE Ambassador (Authentic) -->
+          <div class="gallery-card" data-gallery-cat="tech" data-lightbox data-img-src="images/gallery-2.jpg" data-title="IEEE TechCom Ambassador" data-desc="Official recognition for professional ambassador leadership and engineering community outreach." data-category="Tech Instruction" data-tag="IEEE Ambassador">
+            <div class="gallery-card-img-wrap">
+              <img src="images/gallery-2.jpg" alt="IEEE Best Ambassador Award" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 Full View</span>
+              </div>
+              <span class="media-tag">Authentic Photo</span>
+            </div>
+            <div class="gallery-card-info">
+              <span class="gallery-card-cat">Leadership &amp; Outreach</span>
+              <h3 class="gallery-card-title">IEEE TechCom Ambassador</h3>
+              <p class="gallery-card-caption">Recognized with the Best Ambassador Shield for student outreach and technical community advocacy.</p>
+            </div>
+          </div>
+
+          <!-- Moments Card 4: Digital Census Fieldwork -->
+          <div class="gallery-card" data-gallery-cat="civic" data-lightbox data-img-src="images/exp-census-enumeration.jpg" data-title="7th Digital Population Census" data-desc="Pakistan Bureau of Statistics — High-accuracy field enumeration utilizing dedicated digital tablet technology." data-category="Civic Fieldwork" data-tag="Census 2023">
+            <div class="gallery-card-img-wrap">
+              <img src="images/exp-census-enumeration.jpg" alt="Digital Census Enumeration Fieldwork" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 Full View</span>
+              </div>
+              <span class="media-tag">Digital Census</span>
+            </div>
+            <div class="gallery-card-info">
+              <span class="gallery-card-cat">National Public Duty</span>
+              <h3 class="gallery-card-title">Digital Census Field Operations</h3>
+              <p class="gallery-card-caption">Door-to-door demographic verification and GIS-synchronized household data recording.</p>
+            </div>
+          </div>
+
+          <!-- Moments Card 5: C++ FinTech Engineering -->
+          <div class="gallery-card" data-gallery-cat="tech" data-lightbox data-img-src="images/exp-cpp-developer.jpg" data-title="Banking POS Terminal Development" data-desc="E-Access Solutions — Embedded C++ firmware, Verifone Vx520/Vx680 terminals, and ISO8583 banking protocols." data-category="Tech Instruction" data-tag="FinTech Engineering">
+            <div class="gallery-card-img-wrap">
+              <img src="images/exp-cpp-developer.jpg" alt="C++ Software Engineering" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 Full View</span>
+              </div>
+              <span class="media-tag">FinTech C++</span>
+            </div>
+            <div class="gallery-card-info">
+              <span class="gallery-card-cat">Financial Systems</span>
+              <h3 class="gallery-card-title">Embedded POS Terminal Code</h3>
+              <p class="gallery-card-caption">Low-level banking firmware programming for Bank Alfalah EMV transaction kernel and loyalty transactions.</p>
+            </div>
+          </div>
+
+          <!-- Moments Card 6: General Elections 2024 Duty -->
+          <div class="gallery-card" data-gallery-cat="civic" data-lightbox data-img-src="images/exp-elections-officer.jpg" data-title="General Elections 2024 Polling Duty" data-desc="Election Commission of Pakistan — Official deputation ensuring voter integrity and transparent polling execution." data-category="Civic Fieldwork" data-tag="ECP Elections 2024">
+            <div class="gallery-card-img-wrap">
+              <img src="images/exp-elections-officer.jpg" alt="General Elections Polling Station Duty" loading="lazy" />
+              <div class="media-hover-overlay">
+                <span class="view-pill">🔍 Full View</span>
+              </div>
+              <span class="media-tag">Election Duty</span>
+            </div>
+            <div class="gallery-card-info">
+              <span class="gallery-card-cat">Constitutional Duty</span>
+              <h3 class="gallery-card-title">Election Presiding Oversight</h3>
+              <p class="gallery-card-caption">High-responsibility supervision of national general election polling operations on February 8, 2024.</p>
             </div>
           </div>
 
@@ -1175,6 +1739,27 @@
     </div>
   </footer>
 
+  <!-- Full-screen Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog">
+    <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close photo preview">✕</button>
+      <div class="lightbox-media-wrap">
+        <img id="lightbox-img" src="" alt="" />
+      </div>
+      <div class="lightbox-details">
+        <div class="lightbox-meta">
+          <span id="lightbox-category" class="lightbox-pill">Category</span>
+          <span id="lightbox-tag" class="lightbox-subtag">Credential</span>
+        </div>
+        <h3 id="lightbox-title">Photo Title</h3>
+        <p id="lightbox-desc">Detailed description</p>
+      </div>
+      <button class="lightbox-nav-btn prev" onclick="prevLightbox(event)" aria-label="Previous photo">‹</button>
+      <button class="lightbox-nav-btn next" onclick="nextLightbox(event)" aria-label="Next photo">›</button>
+    </div>
+  </div>
+
   <script>
     // Mobile Menu Toggle
     const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -1191,6 +1776,105 @@
         });
       });
     }
+
+    // Lightbox & Gallery System
+    let galleryItems = [];
+    let currentLightboxIndex = 0;
+
+    function initLightbox() {
+      galleryItems = [];
+      const elements = document.querySelectorAll('[data-lightbox]');
+      elements.forEach((el, index) => {
+        el.setAttribute('data-lightbox-index', index);
+        galleryItems.push({
+          src: el.getAttribute('data-img-src') || el.querySelector('img')?.src,
+          title: el.getAttribute('data-title') || '',
+          desc: el.getAttribute('data-desc') || '',
+          category: el.getAttribute('data-category') || 'Professional Moments',
+          tag: el.getAttribute('data-tag') || ''
+        });
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          openLightboxByIndex(index);
+        });
+      });
+    }
+
+    function openLightbox(src, title, desc, category, tag) {
+      const modal = document.getElementById('lightbox-modal');
+      const imgEl = document.getElementById('lightbox-img');
+      const titleEl = document.getElementById('lightbox-title');
+      const descEl = document.getElementById('lightbox-desc');
+      const catEl = document.getElementById('lightbox-category');
+      const tagEl = document.getElementById('lightbox-tag');
+
+      if (!modal || !imgEl) return;
+
+      imgEl.src = src;
+      imgEl.alt = title || 'Preview';
+      if (titleEl) titleEl.textContent = title || '';
+      if (descEl) descEl.textContent = desc || '';
+      if (catEl) catEl.textContent = category || 'Professional Experience';
+      if (tagEl) tagEl.textContent = tag || '';
+
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function openLightboxByIndex(index) {
+      if (index < 0 || index >= galleryItems.length) return;
+      currentLightboxIndex = index;
+      const item = galleryItems[index];
+      openLightbox(item.src, item.title, item.desc, item.category, item.tag);
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      if (modal) {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+      document.body.style.overflow = '';
+    }
+
+    function prevLightbox(e) {
+      if (e) e.stopPropagation();
+      if (galleryItems.length === 0) return;
+      currentLightboxIndex = (currentLightboxIndex - 1 + galleryItems.length) % galleryItems.length;
+      openLightboxByIndex(currentLightboxIndex);
+    }
+
+    function nextLightbox(e) {
+      if (e) e.stopPropagation();
+      if (galleryItems.length === 0) return;
+      currentLightboxIndex = (currentLightboxIndex + 1) % galleryItems.length;
+      openLightboxByIndex(currentLightboxIndex);
+    }
+
+    // Keyboard controls
+    document.addEventListener('keydown', function(e) {
+      const modal = document.getElementById('lightbox-modal');
+      if (!modal || !modal.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevLightbox();
+      if (e.key === 'ArrowRight') nextLightbox();
+    });
+
+    // Gallery Filter functionality
+    function filterGallery(cat, btn) {
+      document.querySelectorAll('.gallery-filter-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      document.querySelectorAll('.gallery-card').forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-gallery-cat') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', initLightbox);
   </script>
 </body>
 
