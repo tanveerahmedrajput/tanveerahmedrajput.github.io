@@ -69,25 +69,63 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 36px;
+      gap: 28px;
     }
 
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 20px;
       list-style: none;
     }
 
     .nav-links a {
       color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 500;
       transition: color 0.2s ease;
+      white-space: nowrap;
     }
 
-    .nav-links a:hover {
-      color: #ffffff;
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ff5500;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 0;
+      transition: background 0.2s ease, border-color 0.2s ease;
+      z-index: 120;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 16px;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.2s ease;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .mobile-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-menu-btn.active span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
     }
 
     .btn-orange {
@@ -506,6 +544,34 @@
 
     .showcase-card:hover img {
       filter: grayscale(80%) contrast(110%);
+    }
+
+    .showcase-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 22px 18px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      pointer-events: none;
+    }
+
+    .showcase-overlay-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: #ff5500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .showcase-overlay-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.25;
     }
 
     /* Contact / Lead Form Section with Frosted Glass Box */
@@ -1239,12 +1305,45 @@
       }
     }
 
-    @media (max-width: 768px) {
-      header {
-        padding: 18px 5%;
+    @media (max-width: 1024px) {
+      .mobile-menu-btn {
+        display: flex;
       }
       .nav-links {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 290px;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.96);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        flex-direction: column;
+        justify-content: center;
+        padding: 80px 32px 40px 32px;
+        gap: 18px;
+        z-index: 110;
+        transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: -15px 0 40px rgba(0, 0, 0, 0.9);
+      }
+      .nav-links.open {
+        right: 0;
+      }
+      .nav-links a {
+        font-size: 15px;
+        font-weight: 600;
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 16px 5%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
       }
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1325,18 +1424,25 @@
 
   <!-- Header Navigation -->
   <header>
-    <a href="#" class="logo">Tanveer<span style="color:#ff5500;">.</span></a>
+    <a href="index.html#home" class="logo">Tanveer<span style="color:#ff5500;">.</span></a>
     <nav>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="education.html">Education &amp; Certificates</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="sports.html">Sports</a></li>
       </ul>
       <a href="#contact" class="btn-orange">
         Get in touch
         <span class="btn-icon">➔</span>
       </a>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
   </header>
 
@@ -1464,17 +1570,35 @@
       </div>
     </section>
 
-    <!-- Showcase Cards Grid -->
-    <section class="showcase-section section-container" id="projects">
+    <!-- Highlights Section -->
+    <section class="showcase-section section-container" id="highlights">
+      <div style="margin-bottom: 36px;">
+        <p class="eyebrow-orange">Showcase &amp; Milestones</p>
+        <h2 style="font-size: clamp(32px, 4.5vw, 56px); font-weight: 800; letter-spacing: -1.5px; color: #ffffff; line-height: 1.1;">
+          Featured Highlights &amp; <span class="serif-italic">Achievements</span>
+        </h2>
+      </div>
       <div class="showcase-grid">
         <div class="showcase-card">
           <img src="./images/project-poster.jpg" alt="Smart Advertising using Augmented Reality — final year project" />
+          <div class="showcase-overlay">
+            <span class="showcase-overlay-tag">Engineering Final Project</span>
+            <span class="showcase-overlay-title">Smart Advertising with Augmented Reality</span>
+          </div>
         </div>
         <div class="showcase-card">
           <img src="./images/gallery-3.jpg" alt="Classroom, Shahdadpur" />
+          <div class="showcase-overlay">
+            <span class="showcase-overlay-tag">Teaching &amp; Mentorship</span>
+            <span class="showcase-overlay-title">Classroom Science &amp; STEM Education</span>
+          </div>
         </div>
         <div class="showcase-card">
           <img src="./images/gallery-2.jpg" alt="IEEE TechCom '18 Best Ambassador shield" />
+          <div class="showcase-overlay">
+            <span class="showcase-overlay-tag">Award &amp; Honor</span>
+            <span class="showcase-overlay-title">IEEE TechCom '18 Best Ambassador Shield</span>
+          </div>
         </div>
       </div>
     </section>
@@ -1635,9 +1759,9 @@
           <h2 class="growaz-services-headline">
             Skills that<br><span class="serif-italic">I still reach for</span>
           </h2>
-          <a href="#projects" class="btn-pill-dark">
+          <a href="#highlights" class="btn-pill-dark">
             <span class="pill-orange-icon">»</span>
-            View Projects
+            View Highlights
           </a>
         </div>
 
@@ -1675,7 +1799,7 @@
                 <span class="tag">WordPress</span>
                 <span class="tag">Firebase</span>
                 <span class="tag">Supabase</span>
-                            <span class="tag">Vuforia (AR)</span>
+                <span class="tag">Vuforia (AR)</span>
               </div>
             </div>
             <div class="card-footer">
@@ -1695,7 +1819,7 @@
                 <span class="tag">MATLAB</span>
                 <span class="tag">UML</span>
                 <span class="tag">Android Studio</span>
-                <span class="tag">Antogravity IDE</span>
+                <span class="tag">Antigravity IDE</span>
               </div>
             </div>
             <div class="card-footer">
@@ -1743,7 +1867,7 @@
 
         <!-- Brand Column -->
         <div class="footer-brand-col">
-          <a href="#" class="footer-logo">Tanveer.</a>
+          <a href="#" class="footer-logo">Tanveer<span style="color:#ff5500;">.</span></a>
           <p class="footer-tagline">Junior Elementary School Teacher, Government of Sindh, and Computer Systems Engineer. Based in Hyderabad, Pakistan — building clear structure in the classroom and in code.</p>
           <a href="mailto:tanveerrajput0894@gmail.com" class="footer-cta-btn">
             Email Me
@@ -1758,8 +1882,10 @@
             <ul>
               <li><a href="#home">Home</a></li>
               <li><a href="#about">About</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#highlights">Highlights</a></li>
+              <li><a href="education.html">Education &amp; Certificates</a></li>
+              <li><a href="experiences.html">Experiences</a></li>
+              <li><a href="sports.html">Sports</a></li>
             </ul>
           </div>
           <div class="footer-nav-col">
@@ -1828,7 +1954,8 @@
 
   <script>
     (function () {
-      const TOTAL_FRAMES = 180;
+      // There are 110 split frames in ./ezgif-72843d57ac70b076-png-split/ (ezgif-frame-001.png to ezgif-frame-110.png)
+      const TOTAL_FRAMES = 110;
       const FRAME_PATH_PREFIX = './ezgif-72843d57ac70b076-png-split/ezgif-frame-';
       const FRAME_PATH_SUFFIX = '.png';
 
@@ -1874,7 +2001,7 @@
         const imgWidth = img.naturalWidth;
         const imgHeight = img.naturalHeight;
 
-        // Cover fit: fill 100% of the screen background on all devices including large & ultrawide displays
+        // Cover fit: fill 100% of the screen background on all displays including large & ultrawide displays
         const scale = Math.max(canvasWidth / imgWidth, canvasHeight / imgHeight);
         const drawWidth = imgWidth * scale;
         const drawHeight = imgHeight * scale;
@@ -1964,6 +2091,22 @@
       window.addEventListener('resize', resizeCanvas);
       window.addEventListener('orientationchange', resizeCanvas);
       window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+      // Mobile Menu Toggle
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const navLinksEl = document.getElementById('nav-links');
+      if (mobileBtn && navLinksEl) {
+        mobileBtn.addEventListener('click', function() {
+          mobileBtn.classList.toggle('active');
+          navLinksEl.classList.toggle('open');
+        });
+        navLinksEl.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            mobileBtn.classList.remove('active');
+            navLinksEl.classList.remove('open');
+          });
+        });
+      }
 
       resizeCanvas();
       preloadImages();

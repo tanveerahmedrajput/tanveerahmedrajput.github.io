@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Professional Experience — Tanveer Ahmed Rajput</title>
+  <meta name="description"
+    content="Professional teaching and technology experience of Tanveer Ahmed Rajput: Junior Elementary School Teacher (BPS-14) in SELD Sindh, Java & Android Trainer at GEXTON Inc., C++ Developer at E-Access, and Census Enumerator.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .ambient-glow-1 {
+      position: fixed;
+      top: -120px;
+      right: -100px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(255, 85, 0, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .ambient-glow-2 {
+      position: fixed;
+      bottom: -150px;
+      left: -100px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 85, 0, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Header Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 22px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ff5500;
+    }
+
+    .btn-orange {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #ff5500;
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-orange:hover {
+      background-color: #ff661a;
+      transform: translateY(-1px);
+    }
+
+    .btn-icon {
+      width: 24px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 0;
+      transition: background 0.2s ease, border-color 0.2s ease;
+      z-index: 120;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 16px;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.2s ease;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* Page Container */
+    main {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      padding-top: 130px;
+    }
+
+    .section-container {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    .serif-italic {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      color: #ffffff;
+    }
+
+    .eyebrow-orange {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ff5500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    /* Hero Banner */
+    .page-hero {
+      padding: 40px 0 70px 0;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 24px;
+    }
+
+    .breadcrumb a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover {
+      color: #ff5500;
+    }
+
+    .hero-title {
+      font-size: clamp(40px, 6vw, 80px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      color: #ffffff;
+      margin-bottom: 24px;
+    }
+
+    .hero-desc {
+      font-size: clamp(16px, 1.8vw, 20px);
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 800px;
+      margin-bottom: 48px;
+    }
+
+    /* Stats Badges */
+    .stats-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 70px;
+    }
+
+    .stat-pill {
+      background: rgba(15, 12, 12, 0.5);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      padding: 10px 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .stat-pill-num {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      color: #ff5500;
+    }
+
+    .stat-pill-label {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 500;
+    }
+
+    /* Section Header */
+    .section-header-block {
+      margin-bottom: 40px;
+    }
+
+    .section-headline {
+      font-size: clamp(28px, 3.8vw, 46px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: #ffffff;
+      line-height: 1.15;
+    }
+
+    /* Experience Timeline */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-bottom: 100px;
+    }
+
+    .exp-card {
+      background: rgba(12, 10, 10, 0.45);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 40px 44px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 40px;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #ff5500 0%, transparent 100%);
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+
+    .exp-card.active-role::before {
+      opacity: 1;
+      background: #ff5500;
+    }
+
+    .exp-card:hover {
+      border-color: rgba(255, 85, 0, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .exp-card:hover::before {
+      opacity: 1;
+    }
+
+    .exp-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .exp-date {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 15px;
+      font-weight: 700;
+      color: #ff5500;
+      line-height: 1.3;
+    }
+
+    .exp-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(255, 85, 0, 0.15);
+      color: #ff8533;
+      border: 1px solid rgba(255, 85, 0, 0.3);
+    }
+
+    .exp-badge.current {
+      background: #ff5500;
+      color: #ffffff;
+      border-color: #ff5500;
+    }
+
+    .exp-location {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .exp-info h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    .exp-org {
+      font-size: 15px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .exp-desc {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 20px;
+    }
+
+    .exp-highlights-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .exp-highlights-list li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .exp-highlights-list li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #ff5500;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag-sm {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    /* Civic Duties Card Grid */
+    .civic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 100px;
+    }
+
+    .civic-card {
+      background: rgba(15, 12, 12, 0.4);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 32px 28px;
+      transition: border-color 0.3s ease;
+    }
+
+    .civic-card:hover {
+      border-color: rgba(255, 85, 0, 0.4);
+    }
+
+    .civic-badge {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 12px;
+      color: #ff5500;
+      background: rgba(255, 85, 0, 0.1);
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+
+    .civic-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .civic-desc {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.6;
+    }
+
+    /* CTA Card */
+    .cta-card {
+      background: rgba(12, 10, 10, 0.5);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 32px;
+      padding: 70px 48px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+
+    .cta-title {
+      font-size: clamp(32px, 4.5vw, 64px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #ffffff;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .cta-desc {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-pill-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 12px 28px;
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-pill-dark:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 85, 0, 0.5);
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    .site-footer {
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 70px 0 54px 0;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand-col {
+      max-width: 400px;
+    }
+
+    .footer-logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+
+    .footer-tagline {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 28px;
+    }
+
+    .footer-nav-cols {
+      display: flex;
+      gap: 70px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav-col h4 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 22px;
+    }
+
+    .footer-nav-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .footer-nav-col ul li a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav-col ul li a:hover {
+      color: #ff5500;
+    }
+
+    .footer-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      width: 100%;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 36px 0 50px 0;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.7);
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .footer-social-btn:hover {
+      background: #ff5500;
+      border-color: #ff5500;
+      color: #ffffff;
+      transform: translateY(-3px);
+    }
+
+    .footer-social-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .mobile-menu-btn {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 290px;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.96);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        flex-direction: column;
+        justify-content: center;
+        padding: 80px 32px 40px 32px;
+        gap: 18px;
+        z-index: 110;
+        transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: -15px 0 40px rgba(0, 0, 0, 0.9);
+      }
+
+      .nav-links.open {
+        right: 0;
+      }
+
+      .nav-links a {
+        font-size: 15px;
+        font-weight: 600;
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .exp-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .civic-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 16px 5%;
+      }
+
+      main {
+        padding-top: 105px;
+      }
+
+      .exp-card {
+        padding: 30px 24px;
+      }
+
+      .cta-card {
+        padding: 48px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Header Navigation -->
+  <header>
+    <a href="index.html#home" class="logo">Tanveer<span style="color:#ff5500;">.</span></a>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#highlights">Highlights</a></li>
+        <li><a href="education.html">Education &amp; Certificates</a></li>
+        <li><a href="experiences.html" class="active">Experiences</a></li>
+        <li><a href="sports.html">Sports</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn-orange">
+        Get in touch
+        <span class="btn-icon">➔</span>
+      </a>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="section-container">
+
+      <!-- Breadcrumb & Hero -->
+      <section class="page-hero">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Experiences</span>
+        </div>
+        <span class="eyebrow-orange">CAREER TIMELINE &amp; PUBLIC SERVICE</span>
+        <h1 class="hero-title">Professional<br><span class="serif-italic">Experiences.</span></h1>
+        <p class="hero-desc">Over four years of dedicated public service in the Government of Sindh's education
+          department, combined with extensive software engineering training, banking EMV embedded development, and
+          national civic responsibilities.</p>
+
+        <!-- Stats Badges -->
+        <div class="stats-pills-row">
+          <div class="stat-pill">
+            <span class="stat-pill-num">4+</span>
+            <span class="stat-pill-label">Years in Public Education</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-pill-num">BPS-14</span>
+            <span class="stat-pill-label">Government Officer (SELD Sindh)</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-pill-num">03</span>
+            <span class="stat-pill-label">National Civic Deployments</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-pill-num">100+</span>
+            <span class="stat-pill-label">Students Trained in Coding</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education / Public Sector Teaching -->
+      <section>
+        <div class="section-header-block">
+          <span class="eyebrow-orange">PUBLIC SECTOR SERVICE</span>
+          <h2 class="section-headline">Government <span class="serif-italic">Teaching Roles</span></h2>
+        </div>
+
+        <div class="experience-list">
+
+          <!-- Role 1: JEST -->
+          <div class="exp-card active-role">
+            <div class="exp-meta">
+              <span class="exp-date">Sept 2022 — Present</span>
+              <span class="exp-badge current">Current Position</span>
+              <span class="exp-location">Shahdadpur, Sindh</span>
+            </div>
+            <div class="exp-info">
+              <h3>Junior Elementary School Teacher (JEST, BPS-14)</h3>
+              <div class="exp-org">
+                <span>🏛️</span> School Education &amp; Literacy Department (SELD), Government of Sindh
+              </div>
+              <p class="exp-desc">
+                Appointed on merit as a Junior Elementary School Teacher under SELD Sindh. Bringing engineering
+                methodologies, structured pedagogy, and interactive learning into classroom instruction.
+              </p>
+              <ul class="exp-highlights-list">
+                <li><strong>Current Posting:</strong> Transferred to <em>GBHSS Maqsoodo Rind Shahdadpur</em> through
+                  Student-Teacher Ratio (STR) policy on January 17, 2025.</li>
+                <li><strong>Previous Posting:</strong> Served at <em>GBLSS Jatia Shahdadpur</em> from September 3, 2022
+                  to January 2025, significantly improving student engagement in STEM topics.</li>
+                <li><strong>Classroom Management:</strong> Designed interactive lesson plans bridging theoretical
+                  science with real-world applications; mentored students for annual academic assessments.</li>
+                <li><strong>School Census 2025:</strong> Entrusted with official duty as Enumerator in the comprehensive
+                  School Census in November 2025.</li>
+              </ul>
+              <div class="tags-row">
+                <span class="tag-sm">SELD Sindh</span>
+                <span class="tag-sm">BPS-14</span>
+                <span class="tag-sm">STEM Education</span>
+                <span class="tag-sm">Classroom Leadership</span>
+                <span class="tag-sm">Curriculum Planning</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 2: PST -->
+          <div class="exp-card">
+            <div class="exp-meta">
+              <span class="exp-date">May 2022 — Sept 2022</span>
+              <span class="exp-badge">SELD Sindh</span>
+              <span class="exp-location">Shahdadpur, Sindh</span>
+            </div>
+            <div class="exp-info">
+              <h3>Primary School Teacher (PST, BPS-14)</h3>
+              <div class="exp-org">
+                <span>🏛️</span> School Education &amp; Literacy Department (SELD), Government of Sindh
+              </div>
+              <p class="exp-desc">
+                Appointed as Primary School Teacher posted at <em>GBPS PTC Shahdadpur</em>. Delivered foundational
+                primary education, focused on early childhood literacy, basic arithmetic, and student attendance
+                consistency.
+              </p>
+              <ul class="exp-highlights-list">
+                <li>Built foundational literacy and numeracy skills using activity-based learning.</li>
+                <li>Fostered a supportive and disciplined learning environment for young primary learners.</li>
+              </ul>
+              <div class="tags-row">
+                <span class="tag-sm">Primary Education</span>
+                <span class="tag-sm">Foundational Literacy</span>
+                <span class="tag-sm">Early Child Development</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 3: Digital Dreams -->
+          <div class="exp-card">
+            <div class="exp-meta">
+              <span class="exp-date">Part-Time / Visiting</span>
+              <span class="exp-badge">IT Academy</span>
+              <span class="exp-location">Hyderabad / Sindh</span>
+            </div>
+            <div class="exp-info">
+              <h3>Computer Teacher</h3>
+              <div class="exp-org">
+                <span>💻</span> Digital Dreams Computer Academy
+              </div>
+              <p class="exp-desc">
+                Instructing youth and students in practical IT skills, Microsoft Office suite (Word, Excel, PowerPoint),
+                internet research techniques, and foundational computer operations.
+              </p>
+              <div class="tags-row">
+                <span class="tag-sm">Computer Literacy</span>
+                <span class="tag-sm">MS Office Suite</span>
+                <span class="tag-sm">IT Training</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- National Civic Duties Section -->
+      <section>
+        <div class="section-header-block">
+          <span class="eyebrow-orange">CIVIC &amp; NATIONAL CONTRIBUTIONS</span>
+          <h2 class="section-headline">National Assignments &amp; <span class="serif-italic">Public Duty</span></h2>
+        </div>
+
+        <div class="civic-grid">
+
+          <div class="civic-card">
+            <span class="civic-badge">National Census 2023</span>
+            <h3 class="civic-title">Enumerator in Pakistan’s 7th &amp; 1st Digital Census</h3>
+            <p class="civic-desc">Selected by government authorities to perform field enumeration using official digital
+              tablets, collecting and validating citizen demographic data with high accuracy and confidentiality.</p>
+          </div>
+
+          <div class="civic-card">
+            <span class="civic-badge">Election Commission of Pakistan</span>
+            <h3 class="civic-title">Election Duty — General Elections 2024</h3>
+            <p class="civic-desc">Deputed for critical election day polling duty on February 8, 2024, ensuring orderly
+              voter verification, ballot security, and transparent polling station procedures.</p>
+          </div>
+
+          <div class="civic-card">
+            <span class="civic-badge">SELD Institutional Survey</span>
+            <h3 class="civic-title">School Census Enumerator (Nov 2025)</h3>
+            <p class="civic-desc">Conducted comprehensive on-site institutional documentation of student enrollment
+              metrics, school infrastructure conditions, and teacher-student allocations.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Technology & Engineering Industry Experience -->
+      <section>
+        <div class="section-header-block">
+          <span class="eyebrow-orange">TECHNOLOGY &amp; SOFTWARE INDUSTRY</span>
+          <h2 class="section-headline">Engineering &amp; <span class="serif-italic">Corporate Roles</span></h2>
+        </div>
+
+        <div class="experience-list">
+
+          <!-- Industry Role 1 -->
+          <div class="exp-card">
+            <div class="exp-meta">
+              <span class="exp-date">Apr 2018 — Feb 2019</span>
+              <span class="exp-badge">Corporate Trainer</span>
+              <span class="exp-location">GEXTON Inc.</span>
+            </div>
+            <div class="exp-info">
+              <h3>Java &amp; Android Trainer</h3>
+              <div class="exp-org">
+                <span>💻</span> GEXTON Inc., Software &amp; IT Solutions
+              </div>
+              <p class="exp-desc">
+                Conducted structured technical training courses for aspiring developers across Basic, Intermediate, and
+                Advanced tiers. Mentored trainees through architecture, code review, and publication of full-stack
+                mobile applications.
+              </p>
+              <ul class="exp-highlights-list">
+                <li><strong>Supervised Student Projects:</strong> Guided students in building real-world applications
+                  including a <em>Torch Application</em> (hardware camera API control), <em>Live Streaming Lecture
+                    App</em> (real-time network media), and <em>Camera Effects App</em> (image filter shaders).</li>
+                <li><strong>Curriculum Delivery:</strong> Covered Java OOP, Android UI lifecycle, Intents, SQLite local
+                  storage, Broadcast Receivers, and asynchronous REST integrations.</li>
+                <li><strong>Event Organizing:</strong> Spearheaded the organization of Gexton Inc.’s corporate
+                  Independence Day community event.</li>
+              </ul>
+              <div class="tags-row">
+                <span class="tag-sm">Android SDK</span>
+                <span class="tag-sm">Java Programming</span>
+                <span class="tag-sm">Technical Mentorship</span>
+                <span class="tag-sm">Mobile Architecture</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Industry Role 2 -->
+          <div class="exp-card">
+            <div class="exp-meta">
+              <span class="exp-date">Feb 2018 — Mar 2018</span>
+              <span class="exp-badge">C++ Developer</span>
+              <span class="exp-location">E-Access (PVT) Ltd.</span>
+            </div>
+            <div class="exp-info">
+              <h3>Internee C++ Developer</h3>
+              <div class="exp-org">
+                <span>💳</span> E-Access (PVT) Ltd., Financial Technology
+              </div>
+              <p class="exp-desc">
+                Worked on embedded banking payment POS terminal development, configuration, and hardware menu settings
+                across Verifone Vx520 &amp; Vx680 devices.
+              </p>
+              <ul class="exp-highlights-list">
+                <li><strong>Bank Alfalah Payment EMV App:</strong> Integrated the Loyalty application module handling
+                  Orbits Redeem, Inquiry, and Void financial transactions.</li>
+                <li><strong>Protocol Parsing:</strong> Analyzed and handled ISO8583 banking protocol transaction logs
+                  and ROCS configurations inside the secure EMV kernel.</li>
+                <li><strong>Terminal Hardware:</strong> Configured BIOS menu settings, terminal memory allocations, and
+                  direct hardware communication protocols.</li>
+              </ul>
+              <div class="tags-row">
+                <span class="tag-sm">C / C++</span>
+                <span class="tag-sm">Verifone Vx520 / Vx680</span>
+                <span class="tag-sm">ISO8583 Protocol</span>
+                <span class="tag-sm">EMV Banking Apps</span>
+                <span class="tag-sm">POS Firmware</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Industry Role 3 -->
+          <div class="exp-card">
+            <div class="exp-meta">
+              <span class="exp-date">June 2015 — July 2015</span>
+              <span class="exp-badge">Software Intern</span>
+              <span class="exp-location">GEXTON Inc.</span>
+            </div>
+            <div class="exp-info">
+              <h3>Software Engineering Intern (Java Level)</h3>
+              <div class="exp-org">
+                <span>⚙️</span> GEXTON Inc.
+              </div>
+              <p class="exp-desc">
+                Six-week intensive summer internship developing desktop software with Java SE/EE components,
+                object-oriented principles, and relational database management with MySQL.
+              </p>
+              <div class="tags-row">
+                <span class="tag-sm">Java SE</span>
+                <span class="tag-sm">MySQL</span>
+                <span class="tag-sm">Database Connectivity</span>
+                <span class="tag-sm">Desktop Software</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Typing Speed & Core Interpersonal Strengths -->
+      <section style="margin-bottom: 90px;">
+        <div class="section-header-block">
+          <span class="eyebrow-orange">EFFICIENCY &amp; SOFT SKILLS</span>
+          <h2 class="section-headline">Core Strengths &amp; <span class="serif-italic">Capabilities</span></h2>
+        </div>
+
+        <div class="civic-grid">
+          <div class="civic-card">
+            <span class="civic-badge">65 WPM / 100% Accuracy</span>
+            <h3 class="civic-title">High Typing Proficiency</h3>
+            <p class="civic-desc">Verified typing speed of 65 Words Per Minute with flawless 100% accuracy tested on
+              Monkeytype, enabling rapid documentation and coding agility.</p>
+          </div>
+
+          <div class="civic-card">
+            <span class="civic-badge">Team Leadership</span>
+            <h3 class="civic-title">Classroom &amp; Team Composure</h3>
+            <p class="civic-desc">Strong ability to maintain self-composure, manage resources under pressure, adapt to
+              diverse rural/urban settings, and communicate clearly.</p>
+          </div>
+
+          <div class="civic-card">
+            <span class="civic-badge">Civic Accountability</span>
+            <h3 class="civic-title">Public Integrity &amp; Discipline</h3>
+            <p class="civic-desc">Proven track record of punctual execution in high-stakes public duty deployments
+              including national censuses and general election oversight.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Card -->
+      <section class="cta-card">
+        <span class="eyebrow-orange">COLLABORATION &amp; WORK OPPORTUNITIES</span>
+        <h2 class="cta-title">Interested in working<br><span class="serif-italic">together?</span></h2>
+        <p class="cta-desc">Whether for public sector education collaboration, software training workshops, or tech
+          development projects, let's discuss how we can build something impactful.</p>
+        <div class="cta-actions">
+          <a href="index.html#contact" class="btn-orange">
+            Get in Touch
+            <span class="btn-icon">➔</span>
+          </a>
+          <a href="images/Tanveer_Ahmed_CV.pdf" target="_blank" rel="noopener" class="btn-pill-dark">
+            Download CV (PDF)
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="section-container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="index.html#home" class="footer-logo">Tanveer.</a>
+          <p class="footer-tagline">Junior Elementary School Teacher, Government of Sindh, and Computer Systems
+            Engineer. Based in Hyderabad, Pakistan — building clear structure in the classroom and in code.</p>
+          <a href="mailto:tanveerrajput0894@gmail.com" class="btn-orange">
+            Email Me
+            <span class="btn-icon">➔</span>
+          </a>
+        </div>
+
+        <div class="footer-nav-cols">
+          <div class="footer-nav-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html#home">Home</a></li>
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#highlights">Highlights</a></li>
+              <li><a href="education.html">Education &amp; Certificates</a></li>
+              <li><a href="experiences.html">Experiences</a></li>
+              <li><a href="sports.html">Sports</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-col">
+            <h4>Background</h4>
+            <ul>
+              <li><a href="index.html#about">Teaching, SELD Sindh</a></li>
+              <li><a href="experiences.html">Government Service</a></li>
+              <li><a href="education.html">Engineering at MUET</a></li>
+              <li><a href="sports.html">Athletics &amp; Volleyball</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-col">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="mailto:tanveerrajput0894@gmail.com">Email</a></li>
+              <li><a href="tel:+923047582661">Phone / WhatsApp</a></li>
+              <li><a href="images/Tanveer_Ahmed_CV.pdf" target="_blank" rel="noopener">Resume (PDF)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Tanveer Ahmed Rajput. All rights reserved. Sanghar, Sindh, Pakistan.</p>
+        <div class="footer-socials">
+          <a href="mailto:tanveerrajput0894@gmail.com" class="footer-social-btn" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M2 4h20v16H2V4zm2 2v.01L12 12l8-5.99V6H4zm16 2.24l-7.4 5.55a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24z" />
+            </svg>
+          </a>
+          <a href="tel:+923047582661" class="footer-social-btn" aria-label="Phone" title="Phone / WhatsApp">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02l-2.2 2.2z" />
+            </svg>
+          </a>
+          <a href="images/Tanveer_Ahmed_CV.pdf" target="_blank" rel="noopener" class="footer-social-btn"
+            aria-label="Resume" title="Download CV">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-8 2h16v2H4v-2z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navLinksEl = document.getElementById('nav-links');
+    if (mobileBtn && navLinksEl) {
+      mobileBtn.addEventListener('click', function () {
+        mobileBtn.classList.toggle('active');
+        navLinksEl.classList.toggle('open');
+      });
+      navLinksEl.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobileBtn.classList.remove('active');
+          navLinksEl.classList.remove('open');
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>
